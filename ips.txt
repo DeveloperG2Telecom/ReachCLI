@@ -1,0 +1,10 @@
+# Arquivo de IPs para teste de conectividade
+# Formato: um IP por linha
+# Linhas vazias e comentários (começando com #) são ignorados
+
+# Exemplos de IPs (substitua pelos IPs reais dos seus clientes):
+187.10.10.1
+200.150.30.5
+179.40.22.9
+
+# Adicione mais IPs abaixo:

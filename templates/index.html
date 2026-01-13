@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Conectividade HTTP/HTTPS - IPv4</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 Teste de Conectividade HTTP/HTTPS</h1>
+            <p class="subtitle">Sistema de teste para clientes IPv4</p>
+        </header>
+
+        <div class="config-panel">
+            <h2>Configurações</h2>
+            <div class="config-grid">
+                <div class="config-item">
+                    <label for="porta">Porta:</label>
+                    <input type="number" id="porta" value="8080" min="1" max="65535">
+                </div>
+                <div class="config-item">
+                    <label for="timeout">Timeout (segundos):</label>
+                    <input type="number" id="timeout" value="5" min="1" max="60">
+                </div>
+                <div class="config-item">
+                    <label for="verificar-ssl">
+                        <input type="checkbox" id="verificar-ssl">
+                        Verificar SSL
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-panel">
+            <h2>Lista de IPs</h2>
+            <textarea 
+                id="ips-input" 
+                placeholder="Digite os IPs, um por linha:&#10;187.10.10.1&#10;200.150.30.5&#10;179.40.22.9"
+                rows="8"
+            ></textarea>
+            <div class="button-group">
+                <button id="btn-testar" class="btn btn-primary">
+                    <span class="btn-icon">▶</span>
+                    Executar Testes
+                </button>
+                <button id="btn-limpar" class="btn btn-secondary">
+                    Limpar
+                </button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Executando testes...</p>
+        </div>
+
+        <div id="resultados-panel" class="resultados-panel hidden">
+            <div class="resultados-header">
+                <h2>Resultados</h2>
+                <div id="estatisticas" class="estatisticas"></div>
+            </div>
+            <div class="table-container">
+                <table id="resultados-table">
+                    <thead>
+                        <tr>
+                            <th>IP</th>
+                            <th>HTTP</th>
+                            <th>HTTPS</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultados-body">
+                    </tbody>
+                </table>
+            </div>
+            <div class="button-group">
+                <button id="btn-exportar" class="btn btn-success">
+                    📥 Exportar CSV
+                </button>
+            </div>
+        </div>
+
+        <div id="erro-panel" class="erro-panel hidden">
+            <div class="erro-message">
+                <span class="erro-icon">⚠</span>
+                <span id="erro-texto"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
