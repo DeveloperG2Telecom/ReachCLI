@@ -1,0 +1,1401 @@
+IP,HTTP,HTTPS,Status
+100.64.0.102,Timeout,Timeout,Timeout
+100.64.0.103,Timeout,Timeout,Timeout
+100.64.0.104,OK (200),Erro de conexão,OK
+100.64.0.108,Timeout,Timeout,Timeout
+100.64.0.11,Timeout,Timeout,Timeout
+100.64.0.111,Timeout,Timeout,Timeout
+100.64.0.112,OK (200),Erro de conexão,OK
+100.64.0.113,OK (200),Erro de conexão,OK
+100.64.0.117,OK (200),Erro de conexão,OK
+100.64.0.118,OK (200),Erro de conexão,OK
+100.64.0.120,Timeout,Timeout,Timeout
+100.64.0.121,Timeout,Timeout,Timeout
+100.64.0.123,Timeout,Timeout,Timeout
+100.64.0.125,Erro de conexão,OK (200),OK
+100.64.0.128,OK (200),Erro de conexão,OK
+100.64.0.13,Timeout,Timeout,Timeout
+100.64.0.130,Timeout,Timeout,Timeout
+100.64.0.131,Erro de conexão,Erro de conexão,Error
+100.64.0.133,Timeout,Timeout,Timeout
+100.64.0.134,Timeout,Timeout,Timeout
+100.64.0.138,Timeout,Timeout,Timeout
+100.64.0.139,Timeout,Timeout,Timeout
+100.64.0.14,OK (200),Erro de conexão,OK
+100.64.0.140,OK (200),Erro de conexão,OK
+100.64.0.142,OK (200),Erro de conexão,OK
+100.64.0.143,OK (200),Erro de conexão,OK
+100.64.0.144,OK (200),Erro de conexão,OK
+100.64.0.145,OK (200),Erro de conexão,OK
+100.64.0.146,OK (302),Erro de conexão,OK
+100.64.0.147,Timeout,Timeout,Timeout
+100.64.0.148,OK (200),Erro de conexão,OK
+100.64.0.15,Timeout,Timeout,Timeout
+100.64.0.151,OK (200),Erro de conexão,OK
+100.64.0.153,Timeout,Timeout,Timeout
+100.64.0.155,Timeout,Timeout,Timeout
+100.64.0.158,Erro de conexão,Erro de conexão,Error
+100.64.0.159,Timeout,Timeout,Timeout
+100.64.0.160,Timeout,Timeout,Timeout
+100.64.0.161,Timeout,Timeout,Timeout
+100.64.0.162,Erro de conexão,Erro de conexão,Error
+100.64.0.164,OK (200),Erro de conexão,OK
+100.64.0.165,OK (200),Erro de conexão,OK
+100.64.0.166,OK (200),Erro de conexão,OK
+100.64.0.167,Timeout,Timeout,Timeout
+100.64.0.168,Erro de conexão,Erro de conexão,Error
+100.64.0.17,Timeout,Timeout,Timeout
+100.64.0.172,Timeout,Timeout,Timeout
+100.64.0.173,Timeout,Timeout,Timeout
+100.64.0.174,OK (302),Erro de conexão,OK
+100.64.0.176,OK (200),Erro de conexão,OK
+100.64.0.177,Timeout,Timeout,Timeout
+100.64.0.179,Timeout,Timeout,Timeout
+100.64.0.180,Timeout,Timeout,Timeout
+100.64.0.182,OK (200),Erro de conexão,OK
+100.64.0.189,OK (200),Erro de conexão,OK
+100.64.0.190,OK (200),Erro de conexão,OK
+100.64.0.193,OK (200),Erro de conexão,OK
+100.64.0.194,Timeout,Timeout,Timeout
+100.64.0.196,OK (200),Erro de conexão,OK
+100.64.0.2,Timeout,Timeout,Timeout
+100.64.0.203,OK (200),Erro de conexão,OK
+100.64.0.205,OK (200),Erro de conexão,OK
+100.64.0.208,OK (200),Erro de conexão,OK
+100.64.0.209,Timeout,Timeout,Timeout
+100.64.0.21,Timeout,Timeout,Timeout
+100.64.0.210,OK (200),Erro de conexão,OK
+100.64.0.211,Timeout,Timeout,Timeout
+100.64.0.212,Timeout,Timeout,Timeout
+100.64.0.213,Timeout,Timeout,Timeout
+100.64.0.215,Timeout,Timeout,Timeout
+100.64.0.216,Timeout,Timeout,Timeout
+100.64.0.218,OK (200),Erro de conexão,OK
+100.64.0.22,OK (302),Erro de conexão,OK
+100.64.0.220,Timeout,Timeout,Timeout
+100.64.0.222,Timeout,Timeout,Timeout
+100.64.0.223,Timeout,Timeout,Timeout
+100.64.0.224,OK (302),Erro de conexão,OK
+100.64.0.225,Timeout,Timeout,Timeout
+100.64.0.228,Timeout,Timeout,Timeout
+100.64.0.229,OK (200),Erro de conexão,OK
+100.64.0.23,Timeout,Timeout,Timeout
+100.64.0.230,OK (200),Erro de conexão,OK
+100.64.0.231,OK (200),Erro de conexão,OK
+100.64.0.232,OK (200),Erro de conexão,OK
+100.64.0.236,Timeout,Timeout,Timeout
+100.64.0.237,OK (200),Erro de conexão,OK
+100.64.0.24,OK (200),Erro de conexão,OK
+100.64.0.241,Timeout,Timeout,Timeout
+100.64.0.243,Timeout,Timeout,Timeout
+100.64.0.246,OK (200),Erro de conexão,OK
+100.64.0.248,Timeout,Timeout,Timeout
+100.64.0.249,OK (302),Erro de conexão,OK
+100.64.0.25,Erro de conexão,Erro de conexão,Error
+100.64.0.250,Timeout,Timeout,Timeout
+100.64.0.253,OK (200),Erro de conexão,OK
+100.64.0.254,Timeout,Timeout,Timeout
+100.64.0.28,OK (200),Erro de conexão,OK
+100.64.0.29,Timeout,Timeout,Timeout
+100.64.0.31,OK (200),Erro de conexão,OK
+100.64.0.33,Timeout,Timeout,Timeout
+100.64.0.35,OK (302),Erro de conexão,OK
+100.64.0.37,Timeout,Timeout,Timeout
+100.64.0.38,Timeout,Timeout,Timeout
+100.64.0.39,OK (200),Erro de conexão,OK
+100.64.0.4,Timeout,Timeout,Timeout
+100.64.0.45,Erro de conexão,Erro de conexão,Error
+100.64.0.46,Erro de conexão,Erro de conexão,Error
+100.64.0.47,Timeout,Timeout,Timeout
+100.64.0.5,OK (200),Erro de conexão,OK
+100.64.0.50,Timeout,Timeout,Timeout
+100.64.0.51,Timeout,Timeout,Timeout
+100.64.0.52,Timeout,Timeout,Timeout
+100.64.0.54,OK (200),Erro de conexão,OK
+100.64.0.55,OK (200),Erro de conexão,OK
+100.64.0.57,Timeout,Timeout,Timeout
+100.64.0.58,Erro de conexão,Erro de conexão,Error
+100.64.0.61,Timeout,Timeout,Timeout
+100.64.0.63,Timeout,Timeout,Timeout
+100.64.0.65,Timeout,Timeout,Timeout
+100.64.0.68,Timeout,Timeout,Timeout
+100.64.0.69,Erro: ChunkedEncodingError,OK (200),OK
+100.64.0.72,Timeout,Timeout,Timeout
+100.64.0.78,Timeout,Timeout,Timeout
+100.64.0.79,OK (200),Erro de conexão,OK
+100.64.0.82,Erro de conexão,Erro de conexão,Error
+100.64.0.84,OK (200),Erro de conexão,OK
+100.64.0.87,Timeout,Timeout,Timeout
+100.64.0.89,OK (200),Erro de conexão,OK
+100.64.0.9,Timeout,Timeout,Timeout
+100.64.0.90,OK (200),Erro de conexão,OK
+100.64.0.92,Erro: ChunkedEncodingError,OK (200),OK
+100.64.0.93,Timeout,Timeout,Timeout
+100.64.0.94,OK (200),Erro de conexão,OK
+100.64.0.95,Timeout,Timeout,Timeout
+100.64.0.96,Timeout,Timeout,Timeout
+100.64.0.98,Timeout,Timeout,Timeout
+100.64.0.99,Timeout,Timeout,Timeout
+100.64.1.104,OK (302),Erro de conexão,OK
+100.64.1.106,Timeout,Timeout,Timeout
+100.64.1.107,OK (200),Erro de conexão,OK
+100.64.1.108,OK (200),Erro de conexão,OK
+100.64.1.109,Timeout,Timeout,Timeout
+100.64.1.110,Timeout,Timeout,Timeout
+100.64.1.112,OK (200),Erro de conexão,OK
+100.64.1.117,Timeout,Timeout,Timeout
+100.64.1.119,Timeout,Timeout,Timeout
+100.64.1.12,Timeout,Timeout,Timeout
+100.64.1.125,OK (200),Erro de conexão,OK
+100.64.1.126,Timeout,Timeout,Timeout
+100.64.1.128,Timeout,Timeout,Timeout
+100.64.1.130,Timeout,Timeout,Timeout
+100.64.1.131,OK (200),Erro de conexão,OK
+100.64.1.132,Erro de conexão,Erro de conexão,Error
+100.64.1.134,OK (200),Erro de conexão,OK
+100.64.1.135,Timeout,Timeout,Timeout
+100.64.1.137,Timeout,Timeout,Timeout
+100.64.1.141,Erro: ChunkedEncodingError,OK (200),OK
+100.64.1.142,OK (200),Erro de conexão,OK
+100.64.1.144,OK (200),Erro de conexão,OK
+100.64.1.146,Erro de conexão,Erro de conexão,Error
+100.64.1.147,Timeout,Timeout,Timeout
+100.64.1.148,Timeout,Timeout,Timeout
+100.64.1.15,OK (200),Erro de conexão,OK
+100.64.1.153,Timeout,Timeout,Timeout
+100.64.1.158,Timeout,Timeout,Timeout
+100.64.1.160,Timeout,Timeout,Timeout
+100.64.1.161,OK (200),Erro de conexão,OK
+100.64.1.162,OK (200),Erro de conexão,OK
+100.64.1.163,Timeout,Timeout,Timeout
+100.64.1.164,Timeout,Timeout,Timeout
+100.64.1.166,OK (302),Erro de conexão,OK
+100.64.1.167,Timeout,Timeout,Timeout
+100.64.1.171,OK (200),Erro de conexão,OK
+100.64.1.172,Erro de conexão,Erro de conexão,Error
+100.64.1.173,OK (200),Erro de conexão,OK
+100.64.1.174,OK (200),Erro de conexão,OK
+100.64.1.176,Timeout,Timeout,Timeout
+100.64.1.179,OK (200),Erro de conexão,OK
+100.64.1.180,OK (200),Erro de conexão,OK
+100.64.1.183,Timeout,Timeout,Timeout
+100.64.1.185,Timeout,Timeout,Timeout
+100.64.1.189,Timeout,Timeout,Timeout
+100.64.1.19,Erro de conexão,Erro de conexão,Error
+100.64.1.191,OK (200),Erro de conexão,OK
+100.64.1.192,Erro de conexão,Erro de conexão,Error
+100.64.1.196,OK (200),Erro de conexão,OK
+100.64.1.198,Timeout,Timeout,Timeout
+100.64.1.199,Timeout,Timeout,Timeout
+100.64.1.2,OK (200),Erro de conexão,OK
+100.64.1.20,Timeout,Timeout,Timeout
+100.64.1.201,Erro de conexão,Erro de conexão,Error
+100.64.1.202,Timeout,Timeout,Timeout
+100.64.1.207,Timeout,Timeout,Timeout
+100.64.1.209,Timeout,Timeout,Timeout
+100.64.1.214,Timeout,Timeout,Timeout
+100.64.1.216,OK (200),Erro de conexão,OK
+100.64.1.219,Timeout,Timeout,Timeout
+100.64.1.22,Timeout,Timeout,Timeout
+100.64.1.220,Timeout,Timeout,Timeout
+100.64.1.221,OK (200),Erro de conexão,OK
+100.64.1.222,OK (200),Erro de conexão,OK
+100.64.1.226,Erro de conexão,Erro de conexão,Error
+100.64.1.228,Erro de conexão,Erro de conexão,Error
+100.64.1.229,Timeout,Timeout,Timeout
+100.64.1.230,Timeout,Timeout,Timeout
+100.64.1.233,Timeout,Timeout,Timeout
+100.64.1.236,Timeout,Timeout,Timeout
+100.64.1.237,OK (302),Erro de conexão,OK
+100.64.1.238,Timeout,Timeout,Timeout
+100.64.1.242,Erro de conexão,Erro de conexão,Error
+100.64.1.243,Timeout,Timeout,Timeout
+100.64.1.244,OK (307),Erro de conexão,OK
+100.64.1.246,OK (200),Erro de conexão,OK
+100.64.1.247,Timeout,Timeout,Timeout
+100.64.1.248,OK (200),Erro de conexão,OK
+100.64.1.250,Erro de conexão,Erro de conexão,Error
+100.64.1.251,Timeout,Timeout,Timeout
+100.64.1.252,OK (200),Erro de conexão,OK
+100.64.1.27,Timeout,Timeout,Timeout
+100.64.1.3,Timeout,Timeout,Timeout
+100.64.1.36,Timeout,Timeout,Timeout
+100.64.1.37,OK (200),Erro de conexão,OK
+100.64.1.38,Timeout,Timeout,Timeout
+100.64.1.39,OK (200),Erro de conexão,OK
+100.64.1.42,Timeout,Timeout,Timeout
+100.64.1.44,Timeout,Timeout,Timeout
+100.64.1.5,Timeout,Timeout,Timeout
+100.64.1.51,Timeout,Timeout,Timeout
+100.64.1.53,OK (200),Erro de conexão,OK
+100.64.1.54,OK (200),Erro de conexão,OK
+100.64.1.57,OK (200),Erro de conexão,OK
+100.64.1.59,OK (200),Erro de conexão,OK
+100.64.1.6,Timeout,Timeout,Timeout
+100.64.1.62,OK (302),Erro de conexão,OK
+100.64.1.65,Timeout,Timeout,Timeout
+100.64.1.72,OK (200),Erro de conexão,OK
+100.64.1.75,OK (200),Erro de conexão,OK
+100.64.1.77,OK (401),Timeout,OK
+100.64.1.78,OK (200),Erro de conexão,OK
+100.64.1.81,OK (200),Erro de conexão,OK
+100.64.1.82,Timeout,Timeout,Timeout
+100.64.1.87,Timeout,Timeout,Timeout
+100.64.1.88,Timeout,Timeout,Timeout
+100.64.1.90,Timeout,Timeout,Timeout
+100.64.1.94,Timeout,Timeout,Timeout
+100.64.1.96,Timeout,Timeout,Timeout
+100.64.10.1,Timeout,Timeout,Timeout
+100.64.10.101,OK (302),Erro de conexão,OK
+100.64.10.102,Timeout,Timeout,Timeout
+100.64.10.105,Timeout,Timeout,Timeout
+100.64.10.106,Timeout,Timeout,Timeout
+100.64.10.107,Timeout,Timeout,Timeout
+100.64.10.108,OK (302),Erro de conexão,OK
+100.64.10.109,Timeout,Timeout,Timeout
+100.64.10.11,OK (200),Erro de conexão,OK
+100.64.10.110,Timeout,Timeout,Timeout
+100.64.10.112,OK (200),Erro de conexão,OK
+100.64.10.114,Timeout,Timeout,Timeout
+100.64.10.117,Timeout,Timeout,Timeout
+100.64.10.118,OK (200),Erro de conexão,OK
+100.64.10.12,OK (200),Erro de conexão,OK
+100.64.10.124,OK (200),Erro de conexão,OK
+100.64.10.126,OK (302),Erro de conexão,OK
+100.64.10.127,Timeout,Timeout,Timeout
+100.64.10.130,Timeout,Timeout,Timeout
+100.64.10.131,Timeout,Timeout,Timeout
+100.64.10.132,Timeout,Timeout,Timeout
+100.64.10.135,Erro de conexão,OK (200),OK
+100.64.10.136,Timeout,Timeout,Timeout
+100.64.10.138,Erro de conexão,Erro de conexão,Error
+100.64.10.14,Timeout,Timeout,Timeout
+100.64.10.140,Timeout,Timeout,Timeout
+100.64.10.142,OK (200),Erro de conexão,OK
+100.64.10.148,Erro de conexão,OK (200),OK
+100.64.10.15,Timeout,Timeout,Timeout
+100.64.10.155,Timeout,Timeout,Timeout
+100.64.10.159,Timeout,Timeout,Timeout
+100.64.10.16,Timeout,Timeout,Timeout
+100.64.10.160,Erro de conexão,Erro de conexão,Error
+100.64.10.161,OK (200),Erro de conexão,OK
+100.64.10.166,Timeout,Timeout,Timeout
+100.64.10.168,Timeout,Timeout,Timeout
+100.64.10.17,Timeout,Timeout,Timeout
+100.64.10.174,Timeout,Timeout,Timeout
+100.64.10.175,OK (200),Erro de conexão,OK
+100.64.10.176,Timeout,Timeout,Timeout
+100.64.10.18,Timeout,Timeout,Timeout
+100.64.10.180,Erro: ChunkedEncodingError,OK (200),OK
+100.64.10.181,OK (200),Erro de conexão,OK
+100.64.10.182,Timeout,Timeout,Timeout
+100.64.10.183,Timeout,Timeout,Timeout
+100.64.10.184,OK (307),Erro de conexão,OK
+100.64.10.186,Timeout,Timeout,Timeout
+100.64.10.189,OK (302),Erro de conexão,OK
+100.64.10.194,OK (200),Erro de conexão,OK
+100.64.10.197,OK (200),Erro de conexão,OK
+100.64.10.199,Timeout,Timeout,Timeout
+100.64.10.2,OK (200),Erro de conexão,OK
+100.64.10.200,Erro: ChunkedEncodingError,OK (200),OK
+100.64.10.205,Timeout,Timeout,Timeout
+100.64.10.206,Erro: ChunkedEncodingError,OK (200),OK
+100.64.10.207,Erro de conexão,OK (200),OK
+100.64.10.210,OK (200),Erro de conexão,OK
+100.64.10.211,Timeout,Timeout,Timeout
+100.64.10.213,Timeout,Timeout,Timeout
+100.64.10.215,OK (200),Erro de conexão,OK
+100.64.10.216,OK (200),Erro de conexão,OK
+100.64.10.218,OK (200),Erro de conexão,OK
+100.64.10.222,Timeout,Timeout,Timeout
+100.64.10.224,Timeout,Timeout,Timeout
+100.64.10.225,Erro de conexão,Erro de conexão,Error
+100.64.10.226,Timeout,Timeout,Timeout
+100.64.10.227,Timeout,Timeout,Timeout
+100.64.10.230,Timeout,Timeout,Timeout
+100.64.10.232,OK (200),Erro de conexão,OK
+100.64.10.233,OK (302),Erro de conexão,OK
+100.64.10.235,Timeout,Erro de conexão,Error
+100.64.10.237,OK (200),Erro de conexão,OK
+100.64.10.238,OK (200),Erro de conexão,OK
+100.64.10.241,Timeout,Timeout,Timeout
+100.64.10.243,OK (200),Erro de conexão,OK
+100.64.10.245,OK (302),Erro de conexão,OK
+100.64.10.246,Timeout,Timeout,Timeout
+100.64.10.248,OK (302),Erro de conexão,OK
+100.64.10.25,Erro de conexão,OK (200),OK
+100.64.10.250,Timeout,Timeout,Timeout
+100.64.10.251,Timeout,Timeout,Timeout
+100.64.10.252,OK (302),Erro de conexão,OK
+100.64.10.255,OK (302),Erro de conexão,OK
+100.64.10.27,Timeout,Timeout,Timeout
+100.64.10.38,OK (200),Erro de conexão,OK
+100.64.10.39,OK (302),Erro de conexão,OK
+100.64.10.4,OK (200),Erro de conexão,OK
+100.64.10.42,Timeout,Timeout,Timeout
+100.64.10.44,OK (200),Erro de conexão,OK
+100.64.10.46,OK (200),Erro de conexão,OK
+100.64.10.48,OK (200),Erro de conexão,OK
+100.64.10.49,Timeout,Timeout,Timeout
+100.64.10.54,Timeout,Timeout,Timeout
+100.64.10.57,Timeout,Timeout,Timeout
+100.64.10.6,Timeout,Timeout,Timeout
+100.64.10.62,OK (200),Erro de conexão,OK
+100.64.10.63,Timeout,Timeout,Timeout
+100.64.10.64,Timeout,Timeout,Timeout
+100.64.10.65,OK (200),Erro de conexão,OK
+100.64.10.67,Timeout,Timeout,Timeout
+100.64.10.68,OK (200),Erro de conexão,OK
+100.64.10.7,Timeout,Timeout,Timeout
+100.64.10.72,OK (200),Erro de conexão,OK
+100.64.10.74,OK (200),Erro de conexão,OK
+100.64.10.75,Timeout,Timeout,Timeout
+100.64.10.79,OK (200),Erro de conexão,OK
+100.64.10.80,Erro de conexão,Erro de conexão,Error
+100.64.10.81,OK (200),Erro de conexão,OK
+100.64.10.82,OK (200),Erro de conexão,OK
+100.64.10.86,Timeout,Timeout,Timeout
+100.64.10.88,OK (200),Erro de conexão,OK
+100.64.10.93,Timeout,Timeout,Timeout
+100.64.10.94,Timeout,Timeout,Timeout
+100.64.10.96,OK (200),Erro de conexão,OK
+100.64.10.98,Timeout,Timeout,Timeout
+100.64.16.10,OK (302),Erro de conexão,OK
+100.64.16.103,Erro de conexão,Erro de conexão,Error
+100.64.16.108,Timeout,Timeout,Timeout
+100.64.16.11,Erro de conexão,Erro de conexão,Error
+100.64.16.111,OK (200),Erro de conexão,OK
+100.64.16.114,Timeout,Timeout,Timeout
+100.64.16.117,OK (200),Erro de conexão,OK
+100.64.16.119,OK (200),Erro de conexão,OK
+100.64.16.120,Erro de conexão,Erro de conexão,Error
+100.64.16.125,Timeout,Timeout,Timeout
+100.64.16.128,Timeout,Timeout,Timeout
+100.64.16.13,OK (200),Erro de conexão,OK
+100.64.16.130,OK (200),Erro de conexão,OK
+100.64.16.131,OK (200),Erro de conexão,OK
+100.64.16.134,OK (200),Erro de conexão,OK
+100.64.16.136,Timeout,Timeout,Timeout
+100.64.16.137,Timeout,Timeout,Timeout
+100.64.16.14,Timeout,Timeout,Timeout
+100.64.16.141,Timeout,Timeout,Timeout
+100.64.16.144,OK (302),Erro de conexão,OK
+100.64.16.145,OK (200),Erro de conexão,OK
+100.64.16.146,Timeout,Timeout,Timeout
+100.64.16.148,Erro de conexão,Erro de conexão,Error
+100.64.16.149,Timeout,Timeout,Timeout
+100.64.16.15,Timeout,Timeout,Timeout
+100.64.16.150,OK (200),Erro de conexão,OK
+100.64.16.151,Erro de conexão,Erro de conexão,Error
+100.64.16.152,Timeout,Timeout,Timeout
+100.64.16.154,Timeout,Timeout,Timeout
+100.64.16.156,Timeout,Timeout,Timeout
+100.64.16.159,OK (200),Erro de conexão,OK
+100.64.16.160,Erro de conexão,Erro de conexão,Error
+100.64.16.164,Erro de conexão,Erro de conexão,Error
+100.64.16.168,Timeout,Timeout,Timeout
+100.64.16.170,OK (200),Erro de conexão,OK
+100.64.16.171,OK (200),Erro de conexão,OK
+100.64.16.174,OK (200),Erro de conexão,OK
+100.64.16.179,OK (200),Erro de conexão,OK
+100.64.16.188,OK (200),Erro de conexão,OK
+100.64.16.191,Timeout,Timeout,Timeout
+100.64.16.194,Erro de conexão,Erro de conexão,Error
+100.64.16.197,Timeout,Timeout,Timeout
+100.64.16.198,Timeout,Timeout,Timeout
+100.64.16.199,Timeout,Timeout,Timeout
+100.64.16.200,OK (200),Erro de conexão,OK
+100.64.16.203,Timeout,Timeout,Timeout
+100.64.16.208,OK (200),Erro de conexão,OK
+100.64.16.211,Timeout,Timeout,Timeout
+100.64.16.217,Timeout,Timeout,Timeout
+100.64.16.218,Timeout,Timeout,Timeout
+100.64.16.221,OK (302),Erro de conexão,OK
+100.64.16.222,Timeout,Timeout,Timeout
+100.64.16.227,OK (200),Erro de conexão,OK
+100.64.16.23,Timeout,Timeout,Timeout
+100.64.16.230,Timeout,Timeout,Timeout
+100.64.16.231,OK (200),Erro de conexão,OK
+100.64.16.232,Timeout,Timeout,Timeout
+100.64.16.234,Erro de conexão,Erro de conexão,Error
+100.64.16.238,Erro de conexão,Erro de conexão,Error
+100.64.16.239,Timeout,Timeout,Timeout
+100.64.16.24,OK (200),Erro de conexão,OK
+100.64.16.240,OK (200),Erro de conexão,OK
+100.64.16.242,OK (200),Erro de conexão,OK
+100.64.16.244,Timeout,Timeout,Timeout
+100.64.16.245,Erro de conexão,Erro de conexão,Error
+100.64.16.246,OK (302),Erro de conexão,OK
+100.64.16.25,Timeout,Timeout,Timeout
+100.64.16.251,Timeout,Timeout,Timeout
+100.64.16.252,Timeout,Timeout,Timeout
+100.64.16.254,OK (200),Erro de conexão,OK
+100.64.16.26,Timeout,Timeout,Timeout
+100.64.16.27,Erro: ChunkedEncodingError,OK (200),OK
+100.64.16.29,Timeout,Timeout,Timeout
+100.64.16.30,OK (200),Erro de conexão,OK
+100.64.16.32,OK (200),Erro de conexão,OK
+100.64.16.33,Timeout,Timeout,Timeout
+100.64.16.34,Timeout,Timeout,Timeout
+100.64.16.35,Timeout,Timeout,Timeout
+100.64.16.37,Timeout,Timeout,Timeout
+100.64.16.4,Timeout,Timeout,Timeout
+100.64.16.41,OK (200),Erro de conexão,OK
+100.64.16.42,Timeout,Timeout,Timeout
+100.64.16.45,Timeout,Timeout,Timeout
+100.64.16.48,Timeout,Timeout,Timeout
+100.64.16.50,Timeout,Timeout,Timeout
+100.64.16.51,OK (200),Erro de conexão,OK
+100.64.16.55,OK (200),Erro de conexão,OK
+100.64.16.56,OK (200),Erro de conexão,OK
+100.64.16.6,Timeout,Timeout,Timeout
+100.64.16.60,OK (200),Erro de conexão,OK
+100.64.16.61,Erro de conexão,Erro de conexão,Error
+100.64.16.64,OK (200),Erro de conexão,OK
+100.64.16.65,Timeout,Timeout,Timeout
+100.64.16.66,Timeout,Timeout,Timeout
+100.64.16.69,Erro de conexão,Erro de conexão,Error
+100.64.16.70,Timeout,Timeout,Timeout
+100.64.16.72,Timeout,Timeout,Timeout
+100.64.16.74,OK (200),Erro de conexão,OK
+100.64.16.75,OK (307),Erro de conexão,OK
+100.64.16.77,Timeout,Timeout,Timeout
+100.64.16.78,Timeout,Timeout,Timeout
+100.64.16.79,Timeout,Timeout,Timeout
+100.64.16.80,OK (200),Erro de conexão,OK
+100.64.16.81,Erro: ChunkedEncodingError,OK (200),OK
+100.64.16.83,OK (200),Erro de conexão,OK
+100.64.16.84,Timeout,Timeout,Timeout
+100.64.16.85,Timeout,Timeout,Timeout
+100.64.16.86,Erro de conexão,Erro de conexão,Error
+100.64.16.88,OK (200),Erro de conexão,OK
+100.64.16.89,OK (200),Erro de conexão,OK
+100.64.16.91,OK (200),Erro de conexão,OK
+100.64.16.92,Timeout,Timeout,Timeout
+100.64.16.93,OK (302),Erro de conexão,OK
+100.64.16.94,Timeout,Timeout,Timeout
+100.64.16.95,Erro de conexão,Erro de conexão,Error
+100.64.16.97,OK (200),Erro de conexão,OK
+100.64.16.98,Timeout,Timeout,Timeout
+100.64.17.0,OK (200),Erro de conexão,OK
+100.64.17.100,OK (200),Erro de conexão,OK
+100.64.17.101,OK (200),Erro de conexão,OK
+100.64.17.102,Timeout,Timeout,Timeout
+100.64.17.105,Erro de conexão,Erro de conexão,Error
+100.64.17.107,OK (302),Erro de conexão,OK
+100.64.17.108,OK (200),Erro de conexão,OK
+100.64.17.109,Erro de conexão,OK (200),OK
+100.64.17.11,Timeout,Timeout,Timeout
+100.64.17.110,Timeout,Timeout,Timeout
+100.64.17.112,OK (200),Erro de conexão,OK
+100.64.17.114,OK (200),Erro de conexão,OK
+100.64.17.118,Timeout,Timeout,Timeout
+100.64.17.120,OK (200),Erro de conexão,OK
+100.64.17.122,Timeout,Timeout,Timeout
+100.64.17.124,Erro: ChunkedEncodingError,OK (200),OK
+100.64.17.131,Timeout,Timeout,Timeout
+100.64.17.132,OK (302),Erro de conexão,OK
+100.64.17.136,Erro de conexão,Erro de conexão,Error
+100.64.17.138,OK (200),Erro de conexão,OK
+100.64.17.14,Erro de conexão,Erro de conexão,Error
+100.64.17.141,OK (200),Erro de conexão,OK
+100.64.17.145,Timeout,Timeout,Timeout
+100.64.17.147,Timeout,Timeout,Timeout
+100.64.17.148,Timeout,Timeout,Timeout
+100.64.17.149,Timeout,Timeout,Timeout
+100.64.17.150,Timeout,Timeout,Timeout
+100.64.17.152,OK (200),Erro de conexão,OK
+100.64.17.160,Timeout,Timeout,Timeout
+100.64.17.161,Timeout,Timeout,Timeout
+100.64.17.162,Timeout,Timeout,Timeout
+100.64.17.163,Erro de conexão,OK (200),OK
+100.64.17.167,Erro: ChunkedEncodingError,OK (200),OK
+100.64.17.169,OK (200),Erro de conexão,OK
+100.64.17.170,Timeout,Timeout,Timeout
+100.64.17.177,OK (200),Erro de conexão,OK
+100.64.17.179,Timeout,Timeout,Timeout
+100.64.17.181,OK (200),Erro de conexão,OK
+100.64.17.182,OK (200),Erro de conexão,OK
+100.64.17.185,Timeout,Timeout,Timeout
+100.64.17.186,OK (200),Erro de conexão,OK
+100.64.17.189,Timeout,Timeout,Timeout
+100.64.17.193,OK (200),Erro de conexão,OK
+100.64.17.194,Timeout,Timeout,Timeout
+100.64.17.195,Erro: ChunkedEncodingError,OK (200),OK
+100.64.17.196,Erro de conexão,Erro de conexão,Error
+100.64.17.198,Timeout,Timeout,Timeout
+100.64.17.199,OK (200),Erro de conexão,OK
+100.64.17.203,OK (200),Erro de conexão,OK
+100.64.17.205,Timeout,Timeout,Timeout
+100.64.17.206,Timeout,Timeout,Timeout
+100.64.17.207,OK (200),Erro de conexão,OK
+100.64.17.219,Erro de conexão,Erro de conexão,Error
+100.64.17.222,Timeout,Timeout,Timeout
+100.64.17.223,OK (200),Erro de conexão,OK
+100.64.17.224,Timeout,Timeout,Timeout
+100.64.17.226,Timeout,Timeout,Timeout
+100.64.17.231,Timeout,Timeout,Timeout
+100.64.17.232,Timeout,Timeout,Timeout
+100.64.17.233,OK (200),Erro de conexão,OK
+100.64.17.234,Timeout,Timeout,Timeout
+100.64.17.236,Timeout,Timeout,Timeout
+100.64.17.237,OK (200),Erro de conexão,OK
+100.64.17.238,Timeout,Timeout,Timeout
+100.64.17.239,OK (200),Erro de conexão,OK
+100.64.17.240,Erro de conexão,OK (200),OK
+100.64.17.242,Timeout,Timeout,Timeout
+100.64.17.243,Timeout,Timeout,Timeout
+100.64.17.245,OK (200),Erro de conexão,OK
+100.64.17.249,Timeout,Timeout,Timeout
+100.64.17.250,OK (200),Erro de conexão,OK
+100.64.17.253,Timeout,Timeout,Timeout
+100.64.17.255,OK (200),Erro de conexão,OK
+100.64.17.27,Timeout,Timeout,Timeout
+100.64.17.3,Timeout,Timeout,Timeout
+100.64.17.30,Timeout,Timeout,Timeout
+100.64.17.32,Timeout,Timeout,Timeout
+100.64.17.36,OK (200),Erro de conexão,OK
+100.64.17.38,OK (200),Erro de conexão,OK
+100.64.17.42,OK (200),Erro de conexão,OK
+100.64.17.44,Timeout,Timeout,Timeout
+100.64.17.45,OK (200),Erro de conexão,OK
+100.64.17.46,OK (200),Erro de conexão,OK
+100.64.17.48,Timeout,Timeout,Timeout
+100.64.17.52,Timeout,Timeout,Timeout
+100.64.17.53,OK (200),Erro de conexão,OK
+100.64.17.54,Timeout,Timeout,Timeout
+100.64.17.55,Timeout,Timeout,Timeout
+100.64.17.56,OK (200),Erro de conexão,OK
+100.64.17.59,Timeout,Timeout,Timeout
+100.64.17.6,OK (200),Erro de conexão,OK
+100.64.17.62,Timeout,Timeout,Timeout
+100.64.17.64,Timeout,Timeout,Timeout
+100.64.17.66,OK (302),Erro de conexão,OK
+100.64.17.68,OK (200),Erro de conexão,OK
+100.64.17.70,OK (200),Erro de conexão,OK
+100.64.17.75,Timeout,Timeout,Timeout
+100.64.17.77,OK (302),Erro de conexão,OK
+100.64.17.78,OK (200),Erro de conexão,OK
+100.64.17.83,OK (200),Erro de conexão,OK
+100.64.17.84,Timeout,Timeout,Timeout
+100.64.17.85,Timeout,Timeout,Timeout
+100.64.17.87,Timeout,Timeout,Timeout
+100.64.17.88,Timeout,Timeout,Timeout
+100.64.17.89,OK (200),Erro de conexão,OK
+100.64.17.91,Erro: ChunkedEncodingError,OK (200),OK
+100.64.17.96,OK (200),Erro de conexão,OK
+100.64.17.97,Timeout,Timeout,Timeout
+100.64.17.98,OK (200),Erro de conexão,OK
+100.64.18.101,OK (200),Erro de conexão,OK
+100.64.18.103,Timeout,Timeout,Timeout
+100.64.18.107,Timeout,Timeout,Timeout
+100.64.18.108,Timeout,Timeout,Timeout
+100.64.18.109,OK (307),Erro de conexão,OK
+100.64.18.11,OK (302),Erro de conexão,OK
+100.64.18.110,OK (200),Erro de conexão,OK
+100.64.18.113,OK (200),Erro de conexão,OK
+100.64.18.115,Timeout,Timeout,Timeout
+100.64.18.117,Erro de conexão,Erro de conexão,Error
+100.64.18.119,Timeout,Timeout,Timeout
+100.64.18.12,Timeout,Timeout,Timeout
+100.64.18.124,OK (307),Erro de conexão,OK
+100.64.18.126,Timeout,Timeout,Timeout
+100.64.18.128,OK (200),Erro de conexão,OK
+100.64.18.129,OK (200),Erro de conexão,OK
+100.64.18.132,Erro de conexão,Erro de conexão,Error
+100.64.18.133,OK (200),Erro de conexão,OK
+100.64.18.134,OK (200),Erro de conexão,OK
+100.64.18.135,Timeout,Timeout,Timeout
+100.64.18.137,OK (302),Erro de conexão,OK
+100.64.18.138,Timeout,Timeout,Timeout
+100.64.18.14,Timeout,Timeout,Timeout
+100.64.18.140,Timeout,Timeout,Timeout
+100.64.18.142,OK (200),Erro de conexão,OK
+100.64.18.144,Timeout,Timeout,Timeout
+100.64.18.146,Erro de conexão,OK (200),OK
+100.64.18.147,Timeout,Timeout,Timeout
+100.64.18.149,Timeout,Timeout,Timeout
+100.64.18.150,Timeout,Timeout,Timeout
+100.64.18.152,Timeout,Timeout,Timeout
+100.64.18.153,Erro de conexão,Erro de conexão,Error
+100.64.18.154,Timeout,Timeout,Timeout
+100.64.18.158,OK (200),Erro de conexão,OK
+100.64.18.161,Timeout,Timeout,Timeout
+100.64.18.163,OK (200),Erro de conexão,OK
+100.64.18.165,Timeout,Timeout,Timeout
+100.64.18.167,OK (200),Erro de conexão,OK
+100.64.18.171,Timeout,Timeout,Timeout
+100.64.18.173,OK (200),Erro de conexão,OK
+100.64.18.178,Timeout,Timeout,Timeout
+100.64.18.180,OK (200),Erro de conexão,OK
+100.64.18.181,Timeout,Timeout,Timeout
+100.64.18.183,OK (200),Erro de conexão,OK
+100.64.18.184,OK (200),Erro de conexão,OK
+100.64.18.186,Timeout,Timeout,Timeout
+100.64.18.187,OK (200),Erro de conexão,OK
+100.64.18.188,Timeout,Timeout,Timeout
+100.64.18.19,Timeout,Timeout,Timeout
+100.64.18.190,Timeout,Timeout,Timeout
+100.64.18.191,Timeout,Timeout,Timeout
+100.64.18.193,OK (200),Erro de conexão,OK
+100.64.18.195,Erro de conexão,Erro de conexão,Error
+100.64.18.196,OK (200),Erro de conexão,OK
+100.64.18.197,Timeout,Timeout,Timeout
+100.64.18.198,Timeout,Timeout,Timeout
+100.64.18.199,Timeout,Timeout,Timeout
+100.64.18.20,Erro: ChunkedEncodingError,OK (200),OK
+100.64.18.201,OK (200),Erro de conexão,OK
+100.64.18.203,OK (200),Erro de conexão,OK
+100.64.18.204,Timeout,Timeout,Timeout
+100.64.18.205,OK (200),Erro de conexão,OK
+100.64.18.207,Timeout,Timeout,Timeout
+100.64.18.208,OK (302),Erro de conexão,OK
+100.64.18.209,OK (200),Erro de conexão,OK
+100.64.18.211,Timeout,Timeout,Timeout
+100.64.18.212,Timeout,Erro de conexão,Error
+100.64.18.215,OK (200),Erro de conexão,OK
+100.64.18.216,Timeout,Timeout,Timeout
+100.64.18.217,Timeout,Timeout,Timeout
+100.64.18.218,Erro: ChunkedEncodingError,OK (200),OK
+100.64.18.22,Timeout,Timeout,Timeout
+100.64.18.222,Timeout,Timeout,Timeout
+100.64.18.224,Timeout,Timeout,Timeout
+100.64.18.225,OK (200),Erro de conexão,OK
+100.64.18.226,Timeout,Timeout,Timeout
+100.64.18.23,Timeout,Timeout,Timeout
+100.64.18.230,Timeout,Timeout,Timeout
+100.64.18.235,OK (200),Erro de conexão,OK
+100.64.18.236,Timeout,Timeout,Timeout
+100.64.18.237,Erro de conexão,Erro de conexão,Error
+100.64.18.238,OK (200),Erro de conexão,OK
+100.64.18.24,Timeout,Timeout,Timeout
+100.64.18.240,OK (302),Erro de conexão,OK
+100.64.18.242,Timeout,Timeout,Timeout
+100.64.18.243,OK (200),Erro de conexão,OK
+100.64.18.244,OK (200),Erro de conexão,OK
+100.64.18.245,OK (200),Erro de conexão,OK
+100.64.18.246,Timeout,Timeout,Timeout
+100.64.18.247,Timeout,Timeout,Timeout
+100.64.18.248,OK (200),Erro de conexão,OK
+100.64.18.250,Erro: ChunkedEncodingError,OK (200),OK
+100.64.18.252,Timeout,Timeout,Timeout
+100.64.18.253,OK (200),Erro de conexão,OK
+100.64.18.255,OK (200),Erro de conexão,OK
+100.64.18.26,Timeout,Timeout,Timeout
+100.64.18.27,OK (200),Erro de conexão,OK
+100.64.18.29,Timeout,Timeout,Timeout
+100.64.18.3,Timeout,Timeout,Timeout
+100.64.18.31,OK (200),Erro de conexão,OK
+100.64.18.32,Timeout,Timeout,Timeout
+100.64.18.35,Timeout,Timeout,Timeout
+100.64.18.38,Timeout,Timeout,Timeout
+100.64.18.4,Timeout,Timeout,Timeout
+100.64.18.40,OK (200),Erro de conexão,OK
+100.64.18.44,OK (302),Erro de conexão,OK
+100.64.18.45,Timeout,Timeout,Timeout
+100.64.18.46,Timeout,Timeout,Timeout
+100.64.18.5,Timeout,Timeout,Timeout
+100.64.18.50,OK (200),Erro de conexão,OK
+100.64.18.52,OK (200),Erro de conexão,OK
+100.64.18.55,Timeout,Timeout,Timeout
+100.64.18.56,Timeout,Timeout,Timeout
+100.64.18.58,OK (200),Erro de conexão,OK
+100.64.18.6,OK (200),Erro de conexão,OK
+100.64.18.60,OK (200),Erro de conexão,OK
+100.64.18.64,Timeout,Timeout,Timeout
+100.64.18.67,Timeout,Timeout,Timeout
+100.64.18.72,Timeout,Timeout,Timeout
+100.64.18.73,Timeout,Timeout,Timeout
+100.64.18.75,Timeout,Timeout,Timeout
+100.64.18.78,OK (200),Erro de conexão,OK
+100.64.18.79,Timeout,Timeout,Timeout
+100.64.18.80,OK (200),Erro de conexão,OK
+100.64.18.82,Erro: ChunkedEncodingError,OK (200),OK
+100.64.18.85,Timeout,Timeout,Timeout
+100.64.18.86,Timeout,Timeout,Timeout
+100.64.18.88,Timeout,Timeout,Timeout
+100.64.18.89,OK (200),Erro de conexão,OK
+100.64.18.9,Erro de conexão,Erro de conexão,Error
+100.64.18.91,OK (302),Erro de conexão,OK
+100.64.18.93,OK (200),Erro de conexão,OK
+100.64.18.95,OK (200),Erro de conexão,OK
+100.64.18.99,Erro de conexão,Erro de conexão,Error
+100.64.2.102,Timeout,Timeout,Timeout
+100.64.2.104,Timeout,Timeout,Timeout
+100.64.2.105,Timeout,Timeout,Timeout
+100.64.2.107,OK (200),Erro de conexão,OK
+100.64.2.11,Timeout,Timeout,Timeout
+100.64.2.110,OK (200),Erro de conexão,OK
+100.64.2.112,OK (200),Erro de conexão,OK
+100.64.2.114,OK (200),Erro de conexão,OK
+100.64.2.116,OK (200),Erro de conexão,OK
+100.64.2.117,OK (200),Erro de conexão,OK
+100.64.2.118,Timeout,Timeout,Timeout
+100.64.2.119,Timeout,Timeout,Timeout
+100.64.2.121,Timeout,Timeout,Timeout
+100.64.2.122,Erro de conexão,Erro de conexão,Error
+100.64.2.124,OK (200),Erro de conexão,OK
+100.64.2.126,OK (200),Erro de conexão,OK
+100.64.2.128,Timeout,Timeout,Timeout
+100.64.2.129,OK (302),Erro de conexão,OK
+100.64.2.130,Timeout,Timeout,Timeout
+100.64.2.132,OK (200),Erro de conexão,OK
+100.64.2.133,Timeout,Timeout,Timeout
+100.64.2.138,OK (200),Erro de conexão,OK
+100.64.2.140,OK (200),Erro de conexão,OK
+100.64.2.143,Timeout,Timeout,Timeout
+100.64.2.145,Timeout,Timeout,Timeout
+100.64.2.146,OK (307),Erro de conexão,OK
+100.64.2.15,Timeout,Timeout,Timeout
+100.64.2.151,OK (200),Erro de conexão,OK
+100.64.2.152,OK (200),Erro de conexão,OK
+100.64.2.155,Erro de conexão,Erro de conexão,Error
+100.64.2.159,Erro de conexão,Erro de conexão,Error
+100.64.2.16,OK (302),Erro de conexão,OK
+100.64.2.160,Timeout,Timeout,Timeout
+100.64.2.161,Timeout,Timeout,Timeout
+100.64.2.162,OK (200),Erro de conexão,OK
+100.64.2.163,OK (200),Erro de conexão,OK
+100.64.2.174,Timeout,Timeout,Timeout
+100.64.2.176,Timeout,Timeout,Timeout
+100.64.2.180,OK (200),Erro de conexão,OK
+100.64.2.183,Timeout,Timeout,Timeout
+100.64.2.184,Timeout,Timeout,Timeout
+100.64.2.185,OK (200),Erro de conexão,OK
+100.64.2.186,Timeout,Timeout,Timeout
+100.64.2.19,OK (200),Erro de conexão,OK
+100.64.2.190,Timeout,Timeout,Timeout
+100.64.2.193,Erro de conexão,Erro de conexão,Error
+100.64.2.194,Timeout,Timeout,Timeout
+100.64.2.195,Timeout,Timeout,Timeout
+100.64.2.196,Timeout,Timeout,Timeout
+100.64.2.199,Timeout,Timeout,Timeout
+100.64.2.2,Timeout,Timeout,Timeout
+100.64.2.201,Timeout,Timeout,Timeout
+100.64.2.203,Timeout,Timeout,Timeout
+100.64.2.204,Erro de conexão,Erro de conexão,Error
+100.64.2.205,OK (200),Erro de conexão,OK
+100.64.2.206,Timeout,Timeout,Timeout
+100.64.2.21,Erro: ChunkedEncodingError,OK (200),OK
+100.64.2.211,OK (307),Erro de conexão,OK
+100.64.2.212,OK (200),Erro de conexão,OK
+100.64.2.213,Timeout,Timeout,Timeout
+100.64.2.217,OK (302),Erro de conexão,OK
+100.64.2.218,OK (200),Erro de conexão,OK
+100.64.2.219,OK (200),Erro de conexão,OK
+100.64.2.22,OK (200),Erro de conexão,OK
+100.64.2.221,OK (200),Erro de conexão,OK
+100.64.2.222,OK (200),Erro de conexão,OK
+100.64.2.223,Timeout,Timeout,Timeout
+100.64.2.224,OK (200),Erro de conexão,OK
+100.64.2.226,Timeout,Timeout,Timeout
+100.64.2.228,OK (200),Erro de conexão,OK
+100.64.2.231,OK (200),Erro de conexão,OK
+100.64.2.232,Timeout,Timeout,Timeout
+100.64.2.239,Timeout,Timeout,Timeout
+100.64.2.24,OK (200),Erro de conexão,OK
+100.64.2.240,Timeout,Timeout,Timeout
+100.64.2.241,Timeout,Timeout,Timeout
+100.64.2.244,Timeout,Timeout,Timeout
+100.64.2.247,OK (200),Erro de conexão,OK
+100.64.2.248,Timeout,Timeout,Timeout
+100.64.2.252,Timeout,Timeout,Timeout
+100.64.2.253,Erro de conexão,Erro de conexão,Error
+100.64.2.254,Timeout,Timeout,Timeout
+100.64.2.26,Erro: ChunkedEncodingError,OK (200),OK
+100.64.2.27,OK (200),Erro de conexão,OK
+100.64.2.3,Erro de conexão,Erro de conexão,Error
+100.64.2.31,OK (200),Erro de conexão,OK
+100.64.2.32,Erro de conexão,Erro de conexão,Error
+100.64.2.33,OK (302),Erro de conexão,OK
+100.64.2.36,Timeout,Timeout,Timeout
+100.64.2.38,OK (200),Erro de conexão,OK
+100.64.2.43,OK (200),Erro de conexão,OK
+100.64.2.44,OK (200),Erro de conexão,OK
+100.64.2.46,OK (200),Erro de conexão,OK
+100.64.2.47,OK (200),Erro de conexão,OK
+100.64.2.48,Timeout,Timeout,Timeout
+100.64.2.49,Timeout,Timeout,Timeout
+100.64.2.51,OK (200),Erro de conexão,OK
+100.64.2.53,Timeout,Timeout,Timeout
+100.64.2.62,Timeout,Timeout,Timeout
+100.64.2.65,OK (200),Erro de conexão,OK
+100.64.2.68,Erro de conexão,Erro de conexão,Error
+100.64.2.7,Timeout,Timeout,Timeout
+100.64.2.71,Timeout,Timeout,Timeout
+100.64.2.72,Erro: ChunkedEncodingError,OK (200),OK
+100.64.2.73,Erro: ChunkedEncodingError,OK (200),OK
+100.64.2.75,OK (200),Erro de conexão,OK
+100.64.2.78,OK (200),Erro de conexão,OK
+100.64.2.8,Timeout,Timeout,Timeout
+100.64.2.83,Erro de conexão,OK (200),OK
+100.64.2.84,OK (307),Erro de conexão,OK
+100.64.2.85,Timeout,Timeout,Timeout
+100.64.2.88,Timeout,Timeout,Timeout
+100.64.2.90,Timeout,Timeout,Timeout
+100.64.2.91,Timeout,Timeout,Timeout
+100.64.2.93,OK (200),Erro de conexão,OK
+100.64.2.94,OK (302),Erro de conexão,OK
+100.64.2.96,Timeout,Timeout,Timeout
+100.64.2.97,Timeout,Timeout,Timeout
+100.64.2.99,Timeout,Timeout,Timeout
+100.64.24.0,Timeout,Timeout,Timeout
+100.64.24.10,OK (200),Erro de conexão,OK
+100.64.24.102,OK (302),Erro de conexão,OK
+100.64.24.106,OK (302),Erro de conexão,OK
+100.64.24.109,OK (200),Erro de conexão,OK
+100.64.24.111,Timeout,Timeout,Timeout
+100.64.24.116,Timeout,Timeout,Timeout
+100.64.24.12,OK (200),Erro de conexão,OK
+100.64.24.121,Timeout,Timeout,Timeout
+100.64.24.122,OK (200),Erro de conexão,OK
+100.64.24.126,Timeout,Timeout,Timeout
+100.64.24.129,OK (200),Erro de conexão,OK
+100.64.24.13,OK (200),Erro de conexão,OK
+100.64.24.131,Timeout,Timeout,Timeout
+100.64.24.134,OK (200),Erro de conexão,OK
+100.64.24.135,Timeout,Timeout,Timeout
+100.64.24.136,OK (200),Erro de conexão,OK
+100.64.24.137,OK (200),Erro de conexão,OK
+100.64.24.138,Timeout,Timeout,Timeout
+100.64.24.140,Erro de conexão,Erro de conexão,Error
+100.64.24.141,OK (200),Erro de conexão,OK
+100.64.24.142,OK (200),Erro de conexão,OK
+100.64.24.143,OK (200),Erro de conexão,OK
+100.64.24.146,Timeout,Timeout,Timeout
+100.64.24.15,Timeout,Timeout,Timeout
+100.64.24.151,OK (200),Erro de conexão,OK
+100.64.24.152,Timeout,Timeout,Timeout
+100.64.24.153,OK (200),Erro de conexão,OK
+100.64.24.155,Timeout,Timeout,Timeout
+100.64.24.158,OK (200),Erro de conexão,OK
+100.64.24.161,OK (200),Erro de conexão,OK
+100.64.24.162,Timeout,Timeout,Timeout
+100.64.24.165,OK (302),Erro de conexão,OK
+100.64.24.166,OK (302),Erro de conexão,OK
+100.64.24.167,Timeout,Timeout,Timeout
+100.64.24.168,Timeout,Timeout,Timeout
+100.64.24.169,Timeout,Timeout,Timeout
+100.64.24.170,OK (200),Erro de conexão,OK
+100.64.24.172,Timeout,Timeout,Timeout
+100.64.24.174,Timeout,Timeout,Timeout
+100.64.24.176,OK (302),Erro de conexão,OK
+100.64.24.18,Erro de conexão,Erro de conexão,Error
+100.64.24.180,OK (200),Erro de conexão,OK
+100.64.24.181,OK (200),Erro de conexão,OK
+100.64.24.182,OK (200),Erro de conexão,OK
+100.64.24.189,OK (200),Erro de conexão,OK
+100.64.24.192,Timeout,Timeout,Timeout
+100.64.24.195,Timeout,Timeout,Timeout
+100.64.24.196,Timeout,Timeout,Timeout
+100.64.24.197,OK (200),Erro de conexão,OK
+100.64.24.198,Timeout,Timeout,Timeout
+100.64.24.20,OK (200),Erro de conexão,OK
+100.64.24.201,OK (200),Erro de conexão,OK
+100.64.24.203,Timeout,Timeout,Timeout
+100.64.24.205,Timeout,Timeout,Timeout
+100.64.24.209,Erro: ChunkedEncodingError,OK (200),OK
+100.64.24.212,Timeout,Timeout,Timeout
+100.64.24.213,Timeout,Timeout,Timeout
+100.64.24.220,Timeout,Timeout,Timeout
+100.64.24.221,Timeout,Timeout,Timeout
+100.64.24.222,OK (200),Erro de conexão,OK
+100.64.24.223,OK (200),Erro de conexão,OK
+100.64.24.226,Timeout,Timeout,Timeout
+100.64.24.228,Timeout,Timeout,Timeout
+100.64.24.230,Timeout,Timeout,Timeout
+100.64.24.232,OK (200),Erro de conexão,OK
+100.64.24.234,Timeout,Timeout,Timeout
+100.64.24.237,OK (200),Erro de conexão,OK
+100.64.24.238,Timeout,Timeout,Timeout
+100.64.24.239,Timeout,Timeout,Timeout
+100.64.24.24,Erro de conexão,Erro de conexão,Error
+100.64.24.240,OK (200),Erro de conexão,OK
+100.64.24.241,Timeout,Timeout,Timeout
+100.64.24.247,OK (200),Erro de conexão,OK
+100.64.24.248,Timeout,Timeout,Timeout
+100.64.24.249,Timeout,Timeout,Timeout
+100.64.24.250,Timeout,Timeout,Timeout
+100.64.24.251,Timeout,Timeout,Timeout
+100.64.24.252,Timeout,Timeout,Timeout
+100.64.24.254,Timeout,Timeout,Timeout
+100.64.24.255,Timeout,Timeout,Timeout
+100.64.24.29,OK (200),Erro de conexão,OK
+100.64.24.30,Timeout,Timeout,Timeout
+100.64.24.31,Timeout,Timeout,Timeout
+100.64.24.34,OK (200),Erro de conexão,OK
+100.64.24.35,Timeout,Timeout,Timeout
+100.64.24.36,Timeout,Timeout,Timeout
+100.64.24.38,Timeout,Timeout,Timeout
+100.64.24.4,Timeout,Timeout,Timeout
+100.64.24.41,OK (200),Erro de conexão,OK
+100.64.24.42,Timeout,Timeout,Timeout
+100.64.24.43,OK (200),Erro de conexão,OK
+100.64.24.45,OK (200),Erro de conexão,OK
+100.64.24.48,OK (200),Erro de conexão,OK
+100.64.24.49,OK (200),Erro de conexão,OK
+100.64.24.50,Timeout,Timeout,Timeout
+100.64.24.51,Erro de conexão,Erro de conexão,Error
+100.64.24.54,Erro de conexão,Erro de conexão,Error
+100.64.24.57,OK (200),Erro de conexão,OK
+100.64.24.59,OK (200),Erro de conexão,OK
+100.64.24.60,Timeout,Timeout,Timeout
+100.64.24.61,Timeout,Timeout,Timeout
+100.64.24.62,Timeout,Timeout,Timeout
+100.64.24.63,Timeout,Timeout,Timeout
+100.64.24.65,Erro de conexão,Erro de conexão,Error
+100.64.24.67,Timeout,Timeout,Timeout
+100.64.24.7,OK (200),Erro de conexão,OK
+100.64.24.71,Erro de conexão,Erro de conexão,Error
+100.64.24.74,Timeout,Timeout,Timeout
+100.64.24.75,OK (302),Erro de conexão,OK
+100.64.24.76,Timeout,Timeout,Timeout
+100.64.24.77,Erro de conexão,OK (200),OK
+100.64.24.78,OK (200),Erro de conexão,OK
+100.64.24.79,OK (200),Erro de conexão,OK
+100.64.24.80,Timeout,Timeout,Timeout
+100.64.24.82,OK (200),Erro de conexão,OK
+100.64.24.83,Timeout,Timeout,Timeout
+100.64.24.85,OK (200),Erro de conexão,OK
+100.64.24.86,Erro de conexão,Erro de conexão,Error
+100.64.24.87,Timeout,Timeout,Timeout
+100.64.24.9,Erro de conexão,Erro de conexão,Error
+100.64.24.94,Timeout,Timeout,Timeout
+100.64.24.95,Timeout,Timeout,Timeout
+100.64.24.96,Timeout,Timeout,Timeout
+100.64.24.97,Timeout,Timeout,Timeout
+100.64.25.0,OK (200),Erro de conexão,OK
+100.64.25.100,OK (200),Erro de conexão,OK
+100.64.25.101,Timeout,Timeout,Timeout
+100.64.25.108,OK (200),Erro de conexão,OK
+100.64.25.11,Timeout,Timeout,Timeout
+100.64.25.110,OK (200),Erro de conexão,OK
+100.64.25.111,OK (302),Erro de conexão,OK
+100.64.25.114,Timeout,Timeout,Timeout
+100.64.25.115,Timeout,Timeout,Timeout
+100.64.25.116,Timeout,Timeout,Timeout
+100.64.25.119,OK (200),Erro de conexão,OK
+100.64.25.12,OK (200),Erro de conexão,OK
+100.64.25.120,Timeout,Timeout,Timeout
+100.64.25.121,Timeout,Timeout,Timeout
+100.64.25.123,Timeout,Timeout,Timeout
+100.64.25.126,OK (200),Erro de conexão,OK
+100.64.25.128,Timeout,Timeout,Timeout
+100.64.25.129,OK (200),Erro de conexão,OK
+100.64.25.13,Timeout,Timeout,Timeout
+100.64.25.131,Timeout,Timeout,Timeout
+100.64.25.132,OK (200),Erro de conexão,OK
+100.64.25.133,Timeout,Timeout,Timeout
+100.64.25.135,Timeout,Timeout,Timeout
+100.64.25.137,Timeout,Timeout,Timeout
+100.64.25.138,Timeout,Timeout,Timeout
+100.64.25.14,OK (200),Erro de conexão,OK
+100.64.25.144,Timeout,Timeout,Timeout
+100.64.25.149,Timeout,Timeout,Timeout
+100.64.25.151,OK (302),Erro de conexão,OK
+100.64.25.152,Timeout,Timeout,Timeout
+100.64.25.153,OK (302),Erro de conexão,OK
+100.64.25.154,Timeout,Timeout,Timeout
+100.64.25.156,OK (200),Erro de conexão,OK
+100.64.25.158,Timeout,Timeout,Timeout
+100.64.25.162,OK (200),Erro de conexão,OK
+100.64.25.166,OK (200),Erro de conexão,OK
+100.64.25.168,OK (200),Erro de conexão,OK
+100.64.25.17,Timeout,Timeout,Timeout
+100.64.25.170,Timeout,Timeout,Timeout
+100.64.25.173,Timeout,Timeout,Timeout
+100.64.25.174,Timeout,Timeout,Timeout
+100.64.25.175,Timeout,Timeout,Timeout
+100.64.25.176,Timeout,Timeout,Timeout
+100.64.25.183,Timeout,Timeout,Timeout
+100.64.25.184,Timeout,Timeout,Timeout
+100.64.25.185,Timeout,Timeout,Timeout
+100.64.25.186,OK (200),Erro de conexão,OK
+100.64.25.187,Timeout,Timeout,Timeout
+100.64.25.189,OK (200),Erro de conexão,OK
+100.64.25.190,OK (200),Erro de conexão,OK
+100.64.25.192,Timeout,Timeout,Timeout
+100.64.25.194,Erro: ChunkedEncodingError,OK (200),OK
+100.64.25.196,Timeout,Timeout,Timeout
+100.64.25.202,OK (200),Erro de conexão,OK
+100.64.25.203,OK (200),Erro de conexão,OK
+100.64.25.205,Timeout,Timeout,Timeout
+100.64.25.21,Timeout,Timeout,Timeout
+100.64.25.213,Timeout,Timeout,Timeout
+100.64.25.216,Timeout,Timeout,Timeout
+100.64.25.218,OK (200),Erro de conexão,OK
+100.64.25.219,Timeout,Timeout,Timeout
+100.64.25.221,OK (200),Erro de conexão,OK
+100.64.25.222,OK (200),Erro de conexão,OK
+100.64.25.225,OK (302),Erro de conexão,OK
+100.64.25.228,Timeout,Timeout,Timeout
+100.64.25.229,Timeout,Timeout,Timeout
+100.64.25.23,OK (302),Erro de conexão,OK
+100.64.25.232,Erro de conexão,Erro de conexão,Error
+100.64.25.235,Timeout,Timeout,Timeout
+100.64.25.237,Timeout,Timeout,Timeout
+100.64.25.238,OK (200),Erro de conexão,OK
+100.64.25.24,OK (200),Erro de conexão,OK
+100.64.25.242,Timeout,Timeout,Timeout
+100.64.25.243,Timeout,Timeout,Timeout
+100.64.25.245,Timeout,Timeout,Timeout
+100.64.25.25,Timeout,Timeout,Timeout
+100.64.25.250,Timeout,Timeout,Timeout
+100.64.25.253,OK (200),Erro de conexão,OK
+100.64.25.255,Timeout,Timeout,Timeout
+100.64.25.26,Timeout,Timeout,Timeout
+100.64.25.27,OK (200),Erro de conexão,OK
+100.64.25.29,Erro de conexão,Erro de conexão,Error
+100.64.25.3,OK (200),Erro de conexão,OK
+100.64.25.31,Timeout,Timeout,Timeout
+100.64.25.33,OK (200),Erro de conexão,OK
+100.64.25.35,OK (200),Erro de conexão,OK
+100.64.25.36,Timeout,Timeout,Timeout
+100.64.25.37,Timeout,Timeout,Timeout
+100.64.25.39,OK (200),Erro de conexão,OK
+100.64.25.4,Timeout,Timeout,Timeout
+100.64.25.41,Timeout,Timeout,Timeout
+100.64.25.42,OK (200),Erro de conexão,OK
+100.64.25.45,Timeout,Timeout,Timeout
+100.64.25.47,OK (200),Erro de conexão,OK
+100.64.25.48,OK (200),Erro de conexão,OK
+100.64.25.52,Timeout,Timeout,Timeout
+100.64.25.53,Timeout,Timeout,Timeout
+100.64.25.54,Timeout,Timeout,Timeout
+100.64.25.56,Timeout,Timeout,Timeout
+100.64.25.59,Timeout,Timeout,Timeout
+100.64.25.60,OK (200),Erro de conexão,OK
+100.64.25.62,OK (200),Erro de conexão,OK
+100.64.25.63,OK (200),Erro de conexão,OK
+100.64.25.70,Timeout,Timeout,Timeout
+100.64.25.72,Erro de conexão,Erro de conexão,Error
+100.64.25.73,Erro de conexão,Erro de conexão,Error
+100.64.25.75,Timeout,Timeout,Timeout
+100.64.25.77,OK (200),Erro de conexão,OK
+100.64.25.79,Timeout,Timeout,Timeout
+100.64.25.8,OK (200),Erro de conexão,OK
+100.64.25.80,Timeout,Timeout,Timeout
+100.64.25.82,OK (200),Erro de conexão,OK
+100.64.25.85,Erro: ChunkedEncodingError,OK (200),OK
+100.64.25.86,OK (302),Erro de conexão,OK
+100.64.25.92,OK (200),Erro de conexão,OK
+100.64.25.94,Timeout,Timeout,Timeout
+100.64.25.95,OK (200),Erro de conexão,OK
+100.64.25.97,Timeout,Timeout,Timeout
+100.64.26.1,Timeout,Timeout,Timeout
+100.64.26.11,OK (200),Erro de conexão,OK
+100.64.26.123,Timeout,Timeout,Timeout
+100.64.26.135,Erro de conexão,Erro de conexão,Error
+100.64.26.137,Erro de conexão,OK (200),OK
+100.64.26.140,Timeout,Timeout,Timeout
+100.64.26.143,Timeout,Timeout,Timeout
+100.64.26.144,Timeout,Timeout,Timeout
+100.64.26.15,OK (200),Erro de conexão,OK
+100.64.26.158,Timeout,Timeout,Timeout
+100.64.26.168,Timeout,Timeout,Timeout
+100.64.26.176,Timeout,Timeout,Timeout
+100.64.26.179,Erro de conexão,Erro de conexão,Error
+100.64.26.18,Timeout,Timeout,Timeout
+100.64.26.182,Erro de conexão,OK (200),OK
+100.64.26.186,OK (200),Erro de conexão,OK
+100.64.26.187,Timeout,Timeout,Timeout
+100.64.26.188,OK (200),Erro de conexão,OK
+100.64.26.195,Timeout,Timeout,Timeout
+100.64.26.200,OK (307),Erro de conexão,OK
+100.64.26.203,Timeout,Timeout,Timeout
+100.64.26.207,Timeout,Timeout,Timeout
+100.64.26.21,Timeout,Timeout,Timeout
+100.64.26.214,Timeout,Timeout,Timeout
+100.64.26.217,OK (200),Erro de conexão,OK
+100.64.26.219,Erro de conexão,Erro de conexão,Error
+100.64.26.222,Timeout,Timeout,Timeout
+100.64.26.223,OK (200),Erro de conexão,OK
+100.64.26.233,OK (302),Erro de conexão,OK
+100.64.26.235,OK (200),Erro de conexão,OK
+100.64.26.241,Timeout,Timeout,Timeout
+100.64.26.245,Erro de conexão,Erro de conexão,Error
+100.64.26.25,Erro: ChunkedEncodingError,OK (200),OK
+100.64.26.252,OK (200),Erro de conexão,OK
+100.64.26.26,Timeout,Timeout,Timeout
+100.64.26.3,Timeout,Timeout,Timeout
+100.64.26.30,OK (200),Erro de conexão,OK
+100.64.26.38,Timeout,Timeout,Timeout
+100.64.26.4,OK (200),Erro de conexão,OK
+100.64.26.41,OK (302),Erro de conexão,OK
+100.64.26.42,OK (200),Erro de conexão,OK
+100.64.26.45,Timeout,Timeout,Timeout
+100.64.26.5,OK (200),Erro de conexão,OK
+100.64.26.56,OK (200),Erro de conexão,OK
+100.64.26.63,Timeout,Timeout,Timeout
+100.64.26.65,Timeout,Timeout,Timeout
+100.64.26.67,Timeout,Timeout,Timeout
+100.64.26.68,Timeout,Timeout,Timeout
+100.64.26.71,OK (200),Erro de conexão,OK
+100.64.26.83,OK (200),Erro de conexão,OK
+100.64.26.89,Timeout,Timeout,Timeout
+100.64.26.9,Timeout,Timeout,Timeout
+100.64.26.94,OK (302),Erro de conexão,OK
+100.64.8.1,Timeout,Timeout,Timeout
+100.64.8.100,Timeout,Timeout,Timeout
+100.64.8.101,Timeout,Timeout,Timeout
+100.64.8.102,OK (200),Erro de conexão,OK
+100.64.8.103,Timeout,Timeout,Timeout
+100.64.8.104,Timeout,Timeout,Timeout
+100.64.8.105,Timeout,Timeout,Timeout
+100.64.8.108,OK (200),Erro de conexão,OK
+100.64.8.109,Timeout,Timeout,Timeout
+100.64.8.11,OK (200),Erro de conexão,OK
+100.64.8.113,Timeout,Timeout,Timeout
+100.64.8.114,Timeout,Timeout,Timeout
+100.64.8.115,OK (200),Erro de conexão,OK
+100.64.8.121,Timeout,Timeout,Timeout
+100.64.8.123,Timeout,Timeout,Timeout
+100.64.8.124,Timeout,Timeout,Timeout
+100.64.8.126,OK (200),Erro de conexão,OK
+100.64.8.127,Timeout,Timeout,Timeout
+100.64.8.128,Timeout,Timeout,Timeout
+100.64.8.129,OK (200),Erro de conexão,OK
+100.64.8.13,Timeout,Timeout,Timeout
+100.64.8.132,Timeout,Timeout,Timeout
+100.64.8.133,Timeout,Timeout,Timeout
+100.64.8.135,Erro de conexão,Erro de conexão,Error
+100.64.8.137,Timeout,Timeout,Timeout
+100.64.8.140,OK (401),Timeout,OK
+100.64.8.143,OK (200),Erro de conexão,OK
+100.64.8.144,OK (302),Erro de conexão,OK
+100.64.8.146,OK (302),Erro de conexão,OK
+100.64.8.147,OK (200),Erro de conexão,OK
+100.64.8.148,OK (200),Timeout,OK
+100.64.8.149,Erro de conexão,Erro de conexão,Error
+100.64.8.153,OK (307),Erro de conexão,OK
+100.64.8.155,OK (200),Erro de conexão,OK
+100.64.8.158,Timeout,Timeout,Timeout
+100.64.8.160,OK (200),Erro de conexão,OK
+100.64.8.161,Timeout,Timeout,Timeout
+100.64.8.163,OK (200),Erro de conexão,OK
+100.64.8.164,OK (200),Erro de conexão,OK
+100.64.8.166,Timeout,Timeout,Timeout
+100.64.8.167,Timeout,Timeout,Timeout
+100.64.8.17,OK (200),Erro de conexão,OK
+100.64.8.170,Timeout,Timeout,Timeout
+100.64.8.175,OK (200),Erro de conexão,OK
+100.64.8.176,Timeout,Timeout,Timeout
+100.64.8.177,Timeout,Timeout,Timeout
+100.64.8.183,OK (200),Erro de conexão,OK
+100.64.8.185,Timeout,Timeout,Timeout
+100.64.8.188,Timeout,Timeout,Timeout
+100.64.8.189,OK (302),Erro de conexão,OK
+100.64.8.19,OK (200),Erro de conexão,OK
+100.64.8.191,Timeout,Timeout,Timeout
+100.64.8.193,Timeout,Timeout,Timeout
+100.64.8.195,Timeout,Timeout,Timeout
+100.64.8.196,OK (200),Erro de conexão,OK
+100.64.8.197,Timeout,Timeout,Timeout
+100.64.8.199,Timeout,Timeout,Timeout
+100.64.8.2,Timeout,Timeout,Timeout
+100.64.8.20,OK (200),Erro de conexão,OK
+100.64.8.201,Timeout,Timeout,Timeout
+100.64.8.202,Timeout,Timeout,Timeout
+100.64.8.203,Timeout,Timeout,Timeout
+100.64.8.205,OK (200),Erro de conexão,OK
+100.64.8.207,OK (200),Erro de conexão,OK
+100.64.8.208,OK (200),Erro de conexão,OK
+100.64.8.209,Timeout,Timeout,Timeout
+100.64.8.211,OK (200),Erro de conexão,OK
+100.64.8.213,Timeout,Timeout,Timeout
+100.64.8.215,Timeout,Timeout,Timeout
+100.64.8.217,OK (200),Erro de conexão,OK
+100.64.8.218,Timeout,Timeout,Timeout
+100.64.8.22,Timeout,Timeout,Timeout
+100.64.8.221,Timeout,Timeout,Timeout
+100.64.8.222,Timeout,Timeout,Timeout
+100.64.8.223,OK (200),Erro de conexão,OK
+100.64.8.224,Erro de conexão,Erro de conexão,Error
+100.64.8.225,Timeout,Timeout,Timeout
+100.64.8.226,OK (200),Erro de conexão,OK
+100.64.8.228,Timeout,Timeout,Timeout
+100.64.8.232,Timeout,Timeout,Timeout
+100.64.8.233,OK (302),Erro de conexão,OK
+100.64.8.235,Timeout,Timeout,Timeout
+100.64.8.236,Timeout,Timeout,Timeout
+100.64.8.238,Timeout,Timeout,Timeout
+100.64.8.24,OK (200),Erro de conexão,OK
+100.64.8.240,OK (200),Erro de conexão,OK
+100.64.8.241,OK (200),Erro de conexão,OK
+100.64.8.243,Timeout,Timeout,Timeout
+100.64.8.246,Timeout,Timeout,Timeout
+100.64.8.248,Erro de conexão,Erro de conexão,Error
+100.64.8.249,OK (200),Erro de conexão,OK
+100.64.8.25,OK (200),Erro de conexão,OK
+100.64.8.250,Timeout,Timeout,Timeout
+100.64.8.251,Timeout,Timeout,Timeout
+100.64.8.252,OK (200),Erro de conexão,OK
+100.64.8.254,Timeout,Timeout,Timeout
+100.64.8.255,Erro: ChunkedEncodingError,OK (200),OK
+100.64.8.26,OK (200),Erro de conexão,OK
+100.64.8.27,OK (200),Erro de conexão,OK
+100.64.8.28,Timeout,Timeout,Timeout
+100.64.8.29,Timeout,Timeout,Timeout
+100.64.8.30,OK (200),Erro de conexão,OK
+100.64.8.32,OK (307),Erro de conexão,OK
+100.64.8.37,OK (200),Erro de conexão,OK
+100.64.8.38,OK (200),Erro de conexão,OK
+100.64.8.40,Timeout,Timeout,Timeout
+100.64.8.41,Timeout,Timeout,Timeout
+100.64.8.42,Timeout,Timeout,Timeout
+100.64.8.45,Timeout,Timeout,Timeout
+100.64.8.47,Timeout,Timeout,Timeout
+100.64.8.48,OK (200),Erro de conexão,OK
+100.64.8.53,OK (200),Erro de conexão,OK
+100.64.8.56,OK (200),Erro de conexão,OK
+100.64.8.58,OK (200),Erro de conexão,OK
+100.64.8.6,Timeout,Timeout,Timeout
+100.64.8.61,OK (200),Erro de conexão,OK
+100.64.8.65,Timeout,Timeout,Timeout
+100.64.8.7,OK (307),Erro de conexão,OK
+100.64.8.75,Timeout,Timeout,Timeout
+100.64.8.76,OK (200),Erro de conexão,OK
+100.64.8.77,OK (200),Erro de conexão,OK
+100.64.8.78,Timeout,Timeout,Timeout
+100.64.8.8,OK (200),Erro de conexão,OK
+100.64.8.80,OK (307),Erro de conexão,OK
+100.64.8.82,OK (200),Erro de conexão,OK
+100.64.8.83,OK (200),Erro de conexão,OK
+100.64.8.85,Timeout,Timeout,Timeout
+100.64.8.86,OK (200),Erro de conexão,OK
+100.64.8.9,OK (302),Erro de conexão,OK
+100.64.8.96,Timeout,Timeout,Timeout
+100.64.8.97,Timeout,Timeout,Timeout
+100.64.8.99,Timeout,Timeout,Timeout
+100.64.9.0,Timeout,Timeout,Timeout
+100.64.9.100,OK (302),Erro de conexão,OK
+100.64.9.102,OK (200),Erro de conexão,OK
+100.64.9.104,Timeout,Timeout,Timeout
+100.64.9.106,Erro de conexão,Erro de conexão,Error
+100.64.9.107,OK (200),Erro de conexão,OK
+100.64.9.108,OK (302),Erro de conexão,OK
+100.64.9.11,Timeout,Timeout,Timeout
+100.64.9.113,OK (200),Erro de conexão,OK
+100.64.9.114,Timeout,Timeout,Timeout
+100.64.9.115,Timeout,Timeout,Timeout
+100.64.9.117,OK (200),Erro de conexão,OK
+100.64.9.118,OK (200),Erro de conexão,OK
+100.64.9.12,OK (302),Erro de conexão,OK
+100.64.9.122,OK (302),Erro de conexão,OK
+100.64.9.123,OK (200),Erro de conexão,OK
+100.64.9.124,Timeout,Timeout,Timeout
+100.64.9.127,OK (200),Erro de conexão,OK
+100.64.9.13,Timeout,Timeout,Timeout
+100.64.9.132,Timeout,Timeout,Timeout
+100.64.9.134,Timeout,Timeout,Timeout
+100.64.9.137,OK (200),Erro de conexão,OK
+100.64.9.138,Timeout,Timeout,Timeout
+100.64.9.14,Timeout,Timeout,Timeout
+100.64.9.140,Timeout,Timeout,Timeout
+100.64.9.141,OK (200),Erro de conexão,OK
+100.64.9.146,Timeout,Timeout,Timeout
+100.64.9.147,OK (200),Erro de conexão,OK
+100.64.9.155,Timeout,Timeout,Timeout
+100.64.9.157,Erro: ChunkedEncodingError,OK (200),OK
+100.64.9.160,Timeout,Timeout,Timeout
+100.64.9.163,OK (200),Erro de conexão,OK
+100.64.9.17,Timeout,Timeout,Timeout
+100.64.9.170,OK (200),Erro de conexão,OK
+100.64.9.171,Timeout,Timeout,Timeout
+100.64.9.173,OK (302),Erro de conexão,OK
+100.64.9.176,Erro de conexão,Erro de conexão,Error
+100.64.9.178,Timeout,Timeout,Timeout
+100.64.9.179,OK (200),Erro de conexão,OK
+100.64.9.183,OK (200),Erro de conexão,OK
+100.64.9.187,OK (200),Erro de conexão,OK
+100.64.9.189,OK (200),Erro de conexão,OK
+100.64.9.19,OK (200),Erro de conexão,OK
+100.64.9.190,OK (200),Erro de conexão,OK
+100.64.9.193,OK (307),Erro de conexão,OK
+100.64.9.196,Erro de conexão,Erro de conexão,Error
+100.64.9.197,Timeout,Timeout,Timeout
+100.64.9.20,OK (302),Erro de conexão,OK
+100.64.9.202,Timeout,Timeout,Timeout
+100.64.9.203,OK (200),Erro de conexão,OK
+100.64.9.205,OK (200),Erro de conexão,OK
+100.64.9.206,Timeout,Timeout,Timeout
+100.64.9.207,Timeout,Timeout,Timeout
+100.64.9.208,Timeout,Timeout,Timeout
+100.64.9.209,Timeout,Timeout,Timeout
+100.64.9.210,OK (200),Erro de conexão,OK
+100.64.9.211,Timeout,Timeout,Timeout
+100.64.9.212,Timeout,Timeout,Timeout
+100.64.9.213,OK (200),Erro de conexão,OK
+100.64.9.214,Timeout,Timeout,Timeout
+100.64.9.215,Timeout,Timeout,Timeout
+100.64.9.217,OK (302),Erro de conexão,OK
+100.64.9.218,OK (200),Erro de conexão,OK
+100.64.9.220,Timeout,Timeout,Timeout
+100.64.9.223,Timeout,Timeout,Timeout
+100.64.9.224,Timeout,Timeout,Timeout
+100.64.9.225,Timeout,Timeout,Timeout
+100.64.9.226,OK (200),Erro de conexão,OK
+100.64.9.227,OK (200),Erro de conexão,OK
+100.64.9.229,Timeout,Timeout,Timeout
+100.64.9.232,OK (200),Erro de conexão,OK
+100.64.9.235,Timeout,Timeout,Timeout
+100.64.9.239,Timeout,Timeout,Timeout
+100.64.9.24,Timeout,Timeout,Timeout
+100.64.9.240,Timeout,Timeout,Timeout
+100.64.9.243,Timeout,Timeout,Timeout
+100.64.9.246,Timeout,Timeout,Timeout
+100.64.9.247,OK (200),Erro de conexão,OK
+100.64.9.249,OK (200),Erro de conexão,OK
+100.64.9.251,OK (200),Erro de conexão,OK
+100.64.9.252,OK (200),Erro de conexão,OK
+100.64.9.253,OK (200),Erro de conexão,OK
+100.64.9.254,OK (200),Erro de conexão,OK
+100.64.9.26,OK (200),Erro de conexão,OK
+100.64.9.28,Timeout,Timeout,Timeout
+100.64.9.3,Timeout,Timeout,Timeout
+100.64.9.30,Erro de conexão,Erro de conexão,Error
+100.64.9.31,OK (302),Erro de conexão,OK
+100.64.9.32,Timeout,Timeout,Timeout
+100.64.9.35,Timeout,Timeout,Timeout
+100.64.9.37,Timeout,Timeout,Timeout
+100.64.9.40,OK (200),Erro de conexão,OK
+100.64.9.47,Timeout,Timeout,Timeout
+100.64.9.48,Timeout,Timeout,Timeout
+100.64.9.50,OK (200),Erro de conexão,OK
+100.64.9.58,OK (200),Erro de conexão,OK
+100.64.9.59,OK (200),Erro de conexão,OK
+100.64.9.61,OK (302),Timeout,OK
+100.64.9.66,Erro de conexão,OK (200),OK
+100.64.9.67,Timeout,Timeout,Timeout
+100.64.9.7,Timeout,Timeout,Timeout
+100.64.9.70,Timeout,Timeout,Timeout
+100.64.9.72,OK (200),Erro de conexão,OK
+100.64.9.74,Timeout,Timeout,Timeout
+100.64.9.75,Timeout,Timeout,Timeout
+100.64.9.76,OK (302),Erro de conexão,OK
+100.64.9.77,OK (200),Erro de conexão,OK
+100.64.9.80,Timeout,Timeout,Timeout
+100.64.9.81,Timeout,Timeout,Timeout
+100.64.9.82,Erro: ChunkedEncodingError,OK (200),OK
+100.64.9.83,OK (200),Erro de conexão,OK
+100.64.9.84,Erro de conexão,Erro de conexão,Error
+100.64.9.88,Erro: ChunkedEncodingError,OK (200),OK
+100.64.9.9,Erro de conexão,Erro de conexão,Error
+100.64.9.91,Timeout,Timeout,Timeout
+100.64.9.94,Erro: ChunkedEncodingError,OK (200),OK
+100.64.9.95,OK (200),Erro de conexão,OK
+100.64.9.97,Timeout,Timeout,Timeout
+100.64.9.98,OK (200),Erro de conexão,OK
+45.235.84.11,OK (200),Erro de conexão,OK
+45.235.84.14,Erro de conexão,Erro de conexão,Error
+45.235.84.17,OK (302),Erro de conexão,OK
+45.235.84.18,OK (200),Timeout,OK
+45.235.84.41,Erro de conexão,Erro de conexão,Error
+45.235.84.84,Timeout,Timeout,Timeout
+45.235.87.16,Timeout,Timeout,Timeout
+45.235.87.20,Timeout,Timeout,Timeout
+45.235.87.25,OK (200),Erro de conexão,OK
+45.235.87.30,Timeout,Timeout,Timeout
+45.235.87.39,Erro de conexão,Erro de conexão,Error
+45.235.87.74,Timeout,Timeout,Timeout
+45.235.87.79,Erro de conexão,Erro de conexão,Error
