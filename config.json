@@ -1,0 +1,31 @@
+{
+  "nome": "ReachCLI",
+  "versao": "1.0.0",
+  "equipamentos": [
+    {
+      "categoria": "Servidor",
+      "nome": "Servidor DNS",
+      "ip": "8.8.8.8"
+    },
+    {
+      "categoria": "Gateway",
+      "nome": "Gateway Principal",
+      "ip": "192.168.1.254"
+    },
+    {
+      "categoria": "Servidor",
+      "nome": "DNS",
+      "ip": "45.235.87.100"
+    },
+    {
+      "categoria": "Gateway",
+      "nome": "DNS error",
+      "ip": "45.235.89.99"
+    },
+    {
+      "categoria": "Roteador",
+      "nome": "Error",
+      "ip": "10.10.55.50"
+    }
+  ]
+}

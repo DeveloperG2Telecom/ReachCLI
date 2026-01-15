@@ -3,8 +3,10 @@ Configurações do sistema de teste de conectividade HTTP/HTTPS
 """
 
 # Configurações de conexão
-PORTA_PADRAO = 8080
-TIMEOUT_PADRAO = 5  # segundos
+PORTA_PADRAO = 2265
+TIMEOUT_PADRAO = 3  # segundos
+# Portas padrão para teste (HTTP e HTTPS em cada porta)
+PORTAS_PADRAO = [2265, 8080, 8888, 8443, 443, 80, 8530]
 
 # Configurações de paralelismo
 MAX_WORKERS_PADRAO = 20
