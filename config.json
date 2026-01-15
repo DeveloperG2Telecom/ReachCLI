@@ -3,29 +3,109 @@
   "versao": "1.0.0",
   "equipamentos": [
     {
-      "categoria": "Servidor",
-      "nome": "Servidor DNS",
-      "ip": "8.8.8.8"
+      "categoria": "CONCENTRADOR",
+      "nome": "CCR CORE MIKROTIK",
+      "ip": "45.235.87.1"
     },
     {
-      "categoria": "OTL",
-      "nome": "TTT01",
-      "ip": "192.168.1.6"
+      "categoria": "ENERGIA",
+      "nome": "ENERGIA MIRACEMA",
+      "ip": "45.235.87.8"
     },
     {
-      "categoria": "Servidor",
-      "nome": "DNS",
-      "ip": "45.235.87.100"
+      "categoria": "ENERGIA",
+      "nome": "ENERGIA PADUA",
+      "ip": "45.235.86.13"
     },
     {
-      "categoria": "Gateway",
-      "nome": "DNS ERROR",
-      "ip": "45.235.89.99"
+      "categoria": "ENERGIA",
+      "nome": "ENERGIA PARAISO",
+      "ip": "45.235.84.12"
     },
     {
-      "categoria": "TeSTER",
-      "nome": "Host",
-      "ip": "200.0.100.0"
+      "categoria": "ENERGIA",
+      "nome": "ENERGIA REDE ONELIA",
+      "ip": "45.235.86.15"
+    },
+    {
+      "categoria": "ENERGIA",
+      "nome": "ENERGIA VENDA DAS FLORES",
+      "ip": "45.235.84.16"
+    },
+    {
+      "categoria": "CONCENTRADOR",
+      "nome": "MIKROTIK AGUA VIVA - CONCENTRADOR SERRA DA PRATA",
+      "ip": "10.255.20.2"
+    },
+    {
+      "categoria": "CONCENTRADOR",
+      "nome": "MIKROTIK ESTRELA DALVA",
+      "ip": "45.235.84.20"
+    },
+    {
+      "categoria": "CONCENTRADOR",
+      "nome": "MIKROTIK MONTE ALEGRE",
+      "ip": "10.22.65.14"
+    },
+    {
+      "categoria": "CONCENTRADOR",
+      "nome": "MIKROTIK PADUA",
+      "ip": "10.255.25.2"
+    },
+    {
+      "categoria": "CONCENTRADOR",
+      "nome": "MIKROTIK PALMA",
+      "ip": "10.22.65.26"
+    },
+    {
+      "categoria": "CONCENTRADOR",
+      "nome": "MIKROTIK PIRAPETINGA",
+      "ip": "10.22.65.2"
+    },
+    {
+      "categoria": "OLT",
+      "nome": "OLT - LAJE MURIAE",
+      "ip": "10.255.150.2"
+    },
+    {
+      "categoria": "OLT",
+      "nome": "OLT ESTRELA DALVA",
+      "ip": "10.22.65.42"
+    },
+    {
+      "categoria": "OLT",
+      "nome": "OLT MIRACEMA 03",
+      "ip": "10.255.30.2"
+    },
+    {
+      "categoria": "OLT",
+      "nome": "OLT MONTE ALEGRE",
+      "ip": "10.255.130.2"
+    },
+    {
+      "categoria": "OLT",
+      "nome": "OLT PALMA",
+      "ip": "10.255.190.2"
+    },
+    {
+      "categoria": "OLT",
+      "nome": "OLT PARAISO",
+      "ip": "10.255.126.2"
+    },
+    {
+      "categoria": "OLT",
+      "nome": "OLT PIRAPETINGA",
+      "ip": "10.22.25.6"
+    },
+    {
+      "categoria": "OLT",
+      "nome": "OLT SANTO ANTONIO DE PADUA",
+      "ip": "10.255.170.2"
+    },
+    {
+      "categoria": "OLT",
+      "nome": "OLT ZTE C620 - MIRACEMA",
+      "ip": "10.255.160.2"
     }
   ]
 }
