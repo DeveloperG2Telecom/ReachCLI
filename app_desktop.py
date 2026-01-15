@@ -19,6 +19,7 @@ import re
 import time
 import json
 import os
+import requests
 
 from services.http_tester import HTTPTester
 from utils.file_reader import validar_ipv4
@@ -67,6 +68,8 @@ class AppDesktop:
         self.monitoramento_thread = None
         self.monitoramento_intervalo = 30  # segundos
         self.config_json_path = "config.json"
+        self.config_json_github_url = "https://raw.githubusercontent.com/DeveloperG2Telecom/ReachCLI/main/config.json"
+        self.config_json_github_api_url = "https://api.github.com/repos/DeveloperG2Telecom/ReachCLI/contents/config.json"
         self.monitoramento_ordem_atual = None  # Coluna atual de ordenação (None = ordem padrão)
         self.monitoramento_ordem_reversa = False  # Ordem reversa
         
@@ -1066,7 +1069,18 @@ class AppDesktop:
             self.cor_primaria_hover,
             small=True
         )
-        btn_adicionar.grid(row=0, column=3, sticky=tk.W)
+        btn_adicionar.grid(row=0, column=3, padx=(0, 12), sticky=tk.W)
+        
+        # Botão Atualizar do GitHub
+        btn_atualizar = self.criar_botao(
+            controles_inner,
+            "🔄 Atualizar do GitHub",
+            self.atualizar_do_github,
+            self.cor_secundaria,
+            self.cor_secundaria_hover,
+            small=True
+        )
+        btn_atualizar.grid(row=0, column=4, sticky=tk.W)
         
         # Frame de resultados
         resultados_frame = tk.Frame(main_frame, bg='white', relief='flat', highlightbackground=self.cor_borda, highlightthickness=1)
@@ -1087,8 +1101,20 @@ class AppDesktop:
         # Tabela de equipamentos
         self.criar_tabela_monitoramento(resultados_frame)
         
-        # Carregar equipamentos do JSON
-        self.carregar_configuracao()
+        # Carregar equipamentos do JSON (tenta baixar do GitHub na primeira carga)
+        try:
+            print("Iniciando carregamento de configuração...")
+            self.carregar_configuracao(tentar_github=True)
+        except Exception as e:
+            print(f"Erro ao carregar configuração inicial: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            # Se falhar, carregar do arquivo local
+            try:
+                self.carregar_configuracao(tentar_github=False)
+            except Exception as e2:
+                print(f"Erro ao carregar do arquivo local: {str(e2)}")
+                self.equipamentos = []
     
     def criar_tabela_monitoramento(self, parent):
         """Cria a tabela de monitoramento de equipamentos"""
@@ -1138,9 +1164,164 @@ class AppDesktop:
         self.tree_monitoramento.bind("<Button-3>", self.mostrar_menu_contexto_monitoramento)  # Botão direito
         self.tree_monitoramento.bind("<Double-1>", lambda e: self.editar_equipamento_selecionado())  # Duplo clique
     
-    def carregar_configuracao(self):
-        """Carrega configuração e equipamentos do arquivo JSON"""
+    def baixar_config_do_github(self):
+        """Baixa o arquivo config.json do GitHub e salva localmente"""
         try:
+            # Adicionar timestamp à URL para evitar cache
+            timestamp = int(time.time() * 1000)  # Timestamp em milissegundos
+            url_com_timestamp = f"{self.config_json_github_url}?t={timestamp}"
+            
+            print(f"Tentando baixar de: {self.config_json_github_url}")
+            # Fazer requisição para o GitHub com headers para evitar cache
+            headers = {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            }
+            response = requests.get(url_com_timestamp, timeout=10, headers=headers)
+            print(f"Status code: {response.status_code}")
+            print(f"Content-Type: {response.headers.get('Content-Type', 'N/A')}")
+            response.raise_for_status()  # Levanta exceção se status não for 200
+            
+            # Validar se é um JSON válido
+            config_data = response.json()
+            print(f"JSON recebido com {len(config_data.get('equipamentos', []))} equipamentos")
+            
+            # Validar estrutura básica
+            if 'equipamentos' not in config_data:
+                return False, "JSON do GitHub não contém campo 'equipamentos'"
+            
+            # Comparar com arquivo local (se existir) para verificar se mudou
+            arquivo_mudou = True
+            if os.path.exists(self.config_json_path):
+                try:
+                    with open(self.config_json_path, 'r', encoding='utf-8') as f:
+                        dados_locais = json.load(f)
+                    # Comparar apenas os dados permanentes (equipamentos)
+                    equipamentos_locais = dados_locais.get('equipamentos', [])
+                    equipamentos_github = config_data.get('equipamentos', [])
+                    
+                    # Comparar tamanho primeiro
+                    if len(equipamentos_locais) == len(equipamentos_github):
+                        # Comparar conteúdo (ordenar para comparar independente da ordem)
+                        locais_ordenados = sorted(equipamentos_locais, key=lambda x: str(x))
+                        github_ordenados = sorted(equipamentos_github, key=lambda x: str(x))
+                        if locais_ordenados == github_ordenados:
+                            arquivo_mudou = False
+                            print("⚠️ Arquivo do GitHub é idêntico ao local (pode ser cache do GitHub)")
+                except Exception as e:
+                    print(f"Erro ao comparar com arquivo local: {e}")
+            
+            # Salvar no arquivo local (sempre sobrescrever)
+            print(f"Salvando arquivo em: {os.path.abspath(self.config_json_path)}")
+            with open(self.config_json_path, 'w', encoding='utf-8') as f:
+                json.dump(config_data, f, indent=2, ensure_ascii=False)
+            
+            # Forçar sincronização do sistema de arquivos
+            import sys
+            if hasattr(sys, 'flush'):
+                sys.stdout.flush()
+            if os.name == 'nt':  # Windows
+                import ctypes
+                try:
+                    ctypes.windll.kernel32.FlushFileBuffers(-1)
+                except:
+                    pass
+            
+            # Verificar se o arquivo foi realmente salvo
+            if os.path.exists(self.config_json_path):
+                with open(self.config_json_path, 'r', encoding='utf-8') as f:
+                    dados_verificacao = json.load(f)
+                    print(f"Arquivo verificado: {len(dados_verificacao.get('equipamentos', []))} equipamentos no arquivo salvo")
+            
+            mensagem_sucesso = f"Configuração atualizada do GitHub com sucesso!\n{len(config_data.get('equipamentos', []))} equipamentos carregados."
+            if not arquivo_mudou:
+                mensagem_sucesso += "\n\n⚠️ AVISO: O arquivo baixado é idêntico ao local. Pode ser cache do GitHub (espere alguns segundos após editar)."
+            
+            print("Arquivo salvo com sucesso")
+            return True, mensagem_sucesso
+        except requests.exceptions.Timeout:
+            return False, "Timeout ao conectar ao GitHub. Verifique sua conexão com a internet."
+        except requests.exceptions.ConnectionError:
+            return False, "Erro de conexão com o GitHub. Verifique sua conexão com a internet."
+        except requests.exceptions.RequestException as e:
+            print(f"Erro na requisição: {str(e)}")
+            return False, f"Erro ao conectar ao GitHub:\n{str(e)}"
+        except json.JSONDecodeError as e:
+            print(f"Erro ao decodificar JSON: {str(e)}")
+            return False, f"Erro ao processar JSON do GitHub:\n{str(e)}"
+        except Exception as e:
+            print(f"Erro inesperado: {type(e).__name__}: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            return False, f"Erro inesperado ao baixar configuração:\n{type(e).__name__}: {str(e)}"
+    
+    def atualizar_do_github(self):
+        """Atualiza a configuração do GitHub e recarrega os equipamentos"""
+        try:
+            # Mostrar mensagem de carregamento
+            self.root.config(cursor="watch")
+            self.root.update()  # Atualizar interface para mostrar cursor
+            
+            print("Botão atualizar do GitHub pressionado")
+            # Tentar baixar do GitHub
+            print("Iniciando download do GitHub...")
+            sucesso, mensagem = self.baixar_config_do_github()
+            
+            if sucesso:
+                print("Download bem-sucedido, recarregando configuração...")
+                # Aguardar um pouco para garantir que o arquivo foi salvo
+                time.sleep(0.2)
+                # Limpar equipamentos antes de recarregar para forçar atualização
+                self.equipamentos = []
+                # Recarregar configuração local (sem tentar GitHub novamente)
+                self.carregar_configuracao(tentar_github=False)
+                # Forçar atualização da interface
+                self.root.update_idletasks()
+                messagebox.showinfo("Sucesso", mensagem)
+            else:
+                print(f"Download falhou: {mensagem}")
+                # Se falhou, tentar usar arquivo local se existir
+                if os.path.exists(self.config_json_path):
+                    messagebox.showwarning(
+                        "Aviso",
+                        f"{mensagem}\n\nUsando arquivo local como fallback."
+                    )
+                    self.carregar_configuracao(tentar_github=False)
+                else:
+                    messagebox.showerror("Erro", f"{mensagem}\n\nNenhum arquivo local encontrado.")
+        except Exception as e:
+            print(f"Exceção ao atualizar do GitHub: {type(e).__name__}: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            messagebox.showerror("Erro", f"Erro ao atualizar do GitHub:\n{type(e).__name__}: {str(e)}")
+        finally:
+            self.root.config(cursor="")
+    
+    def carregar_configuracao(self, tentar_github=True):
+        """Carrega configuração e equipamentos do arquivo JSON
+        Se tentar_github=True e for o início do software, tenta baixar do GitHub primeiro"""
+        try:
+            # Na primeira carga (início do software), tentar baixar do GitHub
+            if tentar_github:
+                print("Tentando baixar do GitHub...")
+                sucesso, mensagem = self.baixar_config_do_github()
+                if sucesso:
+                    print("Download do GitHub bem-sucedido!")
+                else:
+                    print(f"Falha no download do GitHub: {mensagem}")
+                    # Se falhou, continuar com arquivo local (se existir)
+                    if not os.path.exists(self.config_json_path):
+                        # Se não há arquivo local e falhou GitHub, criar vazio
+                        print("Criando arquivo vazio...")
+                        self.equipamentos = []
+                        self.salvar_configuracao()
+                        return
+                    else:
+                        print("Usando arquivo local como fallback...")
+            
+            # Carregar do arquivo local
             if os.path.exists(self.config_json_path):
                 with open(self.config_json_path, 'r', encoding='utf-8') as f:
                     config_data = json.load(f)
