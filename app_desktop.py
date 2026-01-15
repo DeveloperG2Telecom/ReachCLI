@@ -20,6 +20,8 @@ import time
 import json
 import os
 import requests
+import zipfile
+import shutil
 
 from services.http_tester import HTTPTester
 from utils.file_reader import validar_ipv4
@@ -73,6 +75,11 @@ class AppDesktop:
         self.monitoramento_ordem_atual = None  # Coluna atual de ordenação (None = ordem padrão)
         self.monitoramento_ordem_reversa = False  # Ordem reversa
         
+        # Variáveis para Atualização
+        self.versao_atual = "1.0.0"  # Versão atual do software
+        self.cloudflare_base_url = "https://pub-8e51d8dedc284555a7d22bfae1890f4a.r2.dev/releases"
+        self.verificando_atualizacao = False  # Flag para evitar múltiplas verificações simultâneas
+        
         # Espaçamentos padronizados
         self.padding_externo = 20
         self.padding_interno = 16
@@ -122,9 +129,9 @@ class AppDesktop:
         style.configure('TEntry', fieldbackground='white', borderwidth=1, relief='solid', padding=6)
         style.configure('TButton', padding=8, font=('Segoe UI', 13))
         
-        # Estiliza Treeview (tabela) com fonte maior
-        style.configure('Treeview', font=('Segoe UI', 14), rowheight=28)
-        style.configure('Treeview.Heading', font=('Segoe UI', 14, 'bold'))
+        # Estiliza Treeview (tabela) com fonte maior e arredondada
+        style.configure('Treeview', font=('Segoe UI', 13), rowheight=30)
+        style.configure('Treeview.Heading', font=('Segoe UI', 13, 'bold'))
         
         # Estiliza progressbar
         style.configure('TProgressbar', thickness=4, borderwidth=0, background=self.cor_primaria)
@@ -139,7 +146,7 @@ class AppDesktop:
         self.root.geometry(f'{width}x{height}+{x}+{y}')
     
     def criar_navbar(self):
-        """Cria o navbar superior com 5 botões de navegação"""
+        """Cria o navbar superior com 6 botões de navegação"""
         navbar_frame = tk.Frame(self.root, bg='white', relief='flat', highlightbackground=self.cor_borda, highlightthickness=1)
         navbar_frame.pack(fill=tk.X, side=tk.TOP)
         
@@ -153,7 +160,8 @@ class AppDesktop:
             "🌐 HTTP/HTTPS",
             "🔒 Bloqueio DNS",
             "🔍 Port Scanner",
-            "📊 Relatórios"
+            "📊 Relatórios",
+            "⚙️ Configurações"
         ]
         
         self.navbar_buttons = []
@@ -226,7 +234,7 @@ class AppDesktop:
         self.atualizar_navbar()
     
     def criar_telas(self):
-        """Cria todas as 5 telas"""
+        """Cria todas as 6 telas"""
         # Tela 1: MONITORAMENTO
         tela_monitoramento = tk.Frame(self.content_container, bg=self.cor_fundo)
         self.criar_tela_monitoramento(tela_monitoramento)
@@ -251,6 +259,11 @@ class AppDesktop:
         tela_relatorios = tk.Frame(self.content_container, bg=self.cor_fundo)
         self.criar_tela_relatorios(tela_relatorios)
         self.telas.append(tela_relatorios)
+        
+        # Tela 6: Configurações
+        tela_configuracoes = tk.Frame(self.content_container, bg=self.cor_fundo)
+        self.criar_tela_configuracoes(tela_configuracoes)
+        self.telas.append(tela_configuracoes)
     
     def criar_tela_http(self, parent):
         """Cria a tela de teste HTTP/HTTPS"""
@@ -1042,45 +1055,97 @@ class AppDesktop:
         controles_inner.grid(row=0, column=0, sticky=tk.EW, padx=self.padding_interno, pady=self.padding_interno)
         controles_inner.grid_columnconfigure(1, weight=1)
         
-        # Botão Iniciar/Parar
-        self.btn_monitorar = self.criar_botao(
-            controles_inner,
-            "▶ Iniciar Monitoramento",
+        # Frame para botões à esquerda
+        botoes_left_frame = tk.Frame(controles_inner, bg='white')
+        botoes_left_frame.grid(row=0, column=0, padx=(0, 20), sticky=tk.W)
+        
+        # Botão Iniciar/Parar (estilo moderno - apenas ícone, tamanho maior)
+        self.btn_monitorar_frame = self.criar_botao_moderno(
+            botoes_left_frame,
+            "Iniciar Monitoramento",
             self.toggle_monitoramento,
-            self.cor_sucesso,
-            self.cor_sucesso_hover,
-            bold=True
+            cor_bg="#d1fae5",
+            cor_fg="#065f46",
+            cor_hover_bg="#a7f3d0",
+            cor_hover_fg="#047857",
+            icon="▶",
+            apenas_icone=True,
+            tamanho_icone=20
         )
-        self.btn_monitorar.grid(row=0, column=0, padx=(0, 12), sticky=tk.W)
+        self.btn_monitorar_frame.pack(side=tk.LEFT, padx=(0, 12))
+        self.btn_monitorar = self.btn_monitorar_frame._btn_interno  # Referência ao botão interno
         
-        # Intervalo de monitoramento
-        tk.Label(controles_inner, text="Intervalo (segundos):", bg='white', font=("Segoe UI", 13)).grid(row=0, column=1, padx=(12, 8), sticky=tk.W)
-        self.intervalo_var = tk.StringVar(value=str(self.monitoramento_intervalo))
-        intervalo_entry = tk.Entry(controles_inner, textvariable=self.intervalo_var, width=10, font=("Segoe UI", 13),
-                                  relief='solid', bd=1, highlightthickness=0, highlightbackground=self.cor_borda)
-        intervalo_entry.grid(row=0, column=2, padx=(0, 12), sticky=tk.W)
-        
-        # Botão Adicionar Equipamento
-        btn_adicionar = self.criar_botao(
-            controles_inner,
-            "➕ Adicionar",
+        # Botão Adicionar Equipamento (estilo moderno - apenas ícone, tamanho maior)
+        btn_adicionar = self.criar_botao_moderno(
+            botoes_left_frame,
+            "Adicionar",
             self.adicionar_equipamento,
-            self.cor_primaria,
-            self.cor_primaria_hover,
-            small=True
+            cor_bg="#dbeafe",
+            cor_fg="#1e40af",
+            cor_hover_bg="#bfdbfe",
+            cor_hover_fg="#1e3a8a",
+            icon="➕",
+            apenas_icone=True,
+            tamanho_icone=20
         )
-        btn_adicionar.grid(row=0, column=3, padx=(0, 12), sticky=tk.W)
+        btn_adicionar.pack(side=tk.LEFT, padx=(0, 12))
         
-        # Botão Atualizar do GitHub
-        btn_atualizar = self.criar_botao(
-            controles_inner,
-            "🔄 Atualizar do GitHub",
+        # Botão Atualizar do GitHub (estilo moderno - apenas ícone, tamanho maior)
+        btn_atualizar = self.criar_botao_moderno(
+            botoes_left_frame,
+            "Atualizar do GitHub",
             self.atualizar_do_github,
-            self.cor_secundaria,
-            self.cor_secundaria_hover,
-            small=True
+            cor_bg="#f1f5f9",
+            cor_fg="#475569",
+            cor_hover_bg="#e2e8f0",
+            cor_hover_fg="#1e293b",
+            icon="🔄",
+            apenas_icone=True,
+            tamanho_icone=20
         )
-        btn_atualizar.grid(row=0, column=4, sticky=tk.W)
+        btn_atualizar.pack(side=tk.LEFT)
+        
+        # Frame para intervalo à direita
+        intervalo_frame = tk.Frame(controles_inner, bg='white')
+        intervalo_frame.grid(row=0, column=1, sticky=tk.E)
+        
+        # Label acima do input
+        intervalo_label = tk.Label(
+            intervalo_frame,
+            text="Intervalo (segundos):",
+            bg='white',
+            font=("Segoe UI", 13),
+            fg="#64748b"
+        )
+        intervalo_label.pack(anchor=tk.W, pady=(0, 4))
+        
+        # Input estilizado melhorado
+        self.intervalo_var = tk.StringVar(value=str(self.monitoramento_intervalo))
+        intervalo_entry = tk.Entry(
+            intervalo_frame,
+            textvariable=self.intervalo_var,
+            width=14,
+            font=("Segoe UI", 14),
+            relief='solid',
+            bd=1,
+            highlightthickness=2,
+            highlightbackground="#e2e8f0",
+            highlightcolor="#2563eb",
+            bg="#ffffff",
+            fg="#1e293b",
+            insertbackground="#1e293b",
+            justify=tk.CENTER
+        )
+        intervalo_entry.pack(anchor=tk.W)
+        
+        # Adicionar evento de foco para melhorar visual
+        def on_entry_focus_in(e):
+            intervalo_entry.config(highlightbackground="#2563eb")
+        def on_entry_focus_out(e):
+            intervalo_entry.config(highlightbackground="#e2e8f0")
+        
+        intervalo_entry.bind("<FocusIn>", on_entry_focus_in)
+        intervalo_entry.bind("<FocusOut>", on_entry_focus_out)
         
         # Frame de resultados
         resultados_frame = tk.Frame(main_frame, bg='white', relief='flat', highlightbackground=self.cor_borda, highlightthickness=1)
@@ -1137,7 +1202,7 @@ class AppDesktop:
         
         self.tree_monitoramento.column('Categoria', width=120, anchor=tk.W, minwidth=100)
         self.tree_monitoramento.column('Nome', width=200, anchor=tk.W, minwidth=150)
-        self.tree_monitoramento.column('IP', width=150, anchor=tk.W, minwidth=120)
+        self.tree_monitoramento.column('IP', width=150, anchor=tk.CENTER, minwidth=120)
         self.tree_monitoramento.column('Status', width=100, anchor=tk.CENTER, minwidth=80)
         self.tree_monitoramento.column('Latência', width=120, anchor=tk.CENTER, minwidth=100)
         self.tree_monitoramento.column('Última Verificação', width=180, anchor=tk.CENTER, minwidth=150)
@@ -1150,7 +1215,7 @@ class AppDesktop:
         self.tree_monitoramento.grid(row=0, column=0, sticky=tk.NSEW)
         scrollbar.grid(row=0, column=1, sticky=tk.NS)
         
-        # Tags para cores
+        # Tags para cores (com fundo verde/vermelho e texto)
         self.tree_monitoramento.tag_configure('online', background='#d1fae5', foreground='#065f46')
         self.tree_monitoramento.tag_configure('offline', background='#fee2e2', foreground='#991b1b')
         self.tree_monitoramento.tag_configure('unknown', background='#f3f4f6', foreground='#6b7280')
@@ -1325,6 +1390,8 @@ class AppDesktop:
             if os.path.exists(self.config_json_path):
                 with open(self.config_json_path, 'r', encoding='utf-8') as f:
                     config_data = json.load(f)
+                    # Carregar versão atual do config.json
+                    self.versao_atual = config_data.get('versao', '1.0.0')
                     equipamentos_raw = config_data.get('equipamentos', [])
                     
                     # Inicializar campos dinâmicos para cada equipamento
@@ -1365,7 +1432,7 @@ class AppDesktop:
             
             config_data = {
                 "nome": "ReachCLI",
-                "versao": "1.0.0",
+                "versao": self.versao_atual,  # Usa a versão atual carregada
                 "equipamentos": equipamentos_para_salvar
             }
             
@@ -1480,6 +1547,7 @@ class AppDesktop:
             
             latencia_str = f"{latencia} ms" if latencia is not None else "-"
             
+            # Tag baseada no status (já inclui fundo verde/vermelho)
             tag = 'unknown'
             if status == 'Online':
                 tag = 'online'
@@ -1570,7 +1638,17 @@ class AppDesktop:
         if self.monitorando:
             # Parar monitoramento
             self.monitorando = False
-            self.btn_monitorar.config(text="▶ Iniciar Monitoramento", bg=self.cor_sucesso)
+            self.btn_monitorar.config(text="▶")
+            # Restaurar cores do botão para estado "iniciar"
+            if hasattr(self, 'btn_monitorar_frame'):
+                self.btn_monitorar_frame._cor_bg = "#d1fae5"
+                self.btn_monitorar_frame._cor_fg = "#065f46"
+                self.btn_monitorar_frame._cor_hover_bg = "#a7f3d0"
+                self.btn_monitorar_frame._cor_hover_fg = "#047857"
+                self.btn_monitorar_frame._cor_borda = "#86efac"
+                self.btn_monitorar_frame._cor_borda_hover = "#4ade80"
+                self.btn_monitorar_frame.config(bg="#d1fae5", highlightbackground="#86efac")
+                self.btn_monitorar.config(bg="#d1fae5", fg="#065f46", activebackground="#a7f3d0", activeforeground="#047857")
         else:
             # Iniciar monitoramento
             try:
@@ -1587,7 +1665,17 @@ class AppDesktop:
                 return
             
             self.monitorando = True
-            self.btn_monitorar.config(text="⏹ Parar Monitoramento", bg=self.cor_erro)
+            self.btn_monitorar.config(text="⏸")
+            # Atualizar cores do botão para estado "parar"
+            if hasattr(self, 'btn_monitorar_frame'):
+                self.btn_monitorar_frame._cor_bg = "#fee2e2"
+                self.btn_monitorar_frame._cor_fg = "#dc2626"
+                self.btn_monitorar_frame._cor_hover_bg = "#fecaca"
+                self.btn_monitorar_frame._cor_hover_fg = "#991b1b"
+                self.btn_monitorar_frame._cor_borda = "#fca5a5"
+                self.btn_monitorar_frame._cor_borda_hover = "#f87171"
+                self.btn_monitorar_frame.config(bg="#fee2e2", highlightbackground="#fca5a5")
+                self.btn_monitorar.config(bg="#fee2e2", fg="#dc2626", activebackground="#fecaca", activeforeground="#991b1b")
             
             # Iniciar thread de monitoramento
             self.monitoramento_thread = threading.Thread(target=self.loop_monitoramento, daemon=True)
@@ -1696,10 +1784,11 @@ class AppDesktop:
         """Abre diálogo para adicionar novo equipamento"""
         dialog = tk.Toplevel(self.root)
         dialog.title("Adicionar Equipamento")
-        dialog.geometry("400x250")
+        dialog.geometry("550x380")
         dialog.resizable(False, False)
         dialog.transient(self.root)
         dialog.grab_set()
+        dialog.configure(bg='#f1f5f9')
         
         # Centralizar diálogo
         dialog.update_idletasks()
@@ -1707,30 +1796,89 @@ class AppDesktop:
         y = (dialog.winfo_screenheight() // 2) - (dialog.winfo_height() // 2)
         dialog.geometry(f"+{x}+{y}")
         
-        main_frame = tk.Frame(dialog, bg='white', padx=20, pady=20)
+        # Frame externo com sombra (simulada com borda)
+        shadow_frame = tk.Frame(dialog, bg='#cbd5e1', padx=2, pady=2)
+        shadow_frame.pack(fill=tk.BOTH, expand=True, padx=8, pady=8)
+        
+        # Main frame estilizado
+        main_frame = tk.Frame(shadow_frame, bg='white', relief=tk.FLAT, bd=0, 
+                             highlightbackground='#e2e8f0', highlightthickness=1)
         main_frame.pack(fill=tk.BOTH, expand=True)
         
+        # Título
+        title_frame = tk.Frame(main_frame, bg='white')
+        title_frame.pack(fill=tk.X, pady=(25, 20))
+        
+        title_label = tk.Label(
+            title_frame,
+            text="➕ Adicionar Equipamento",
+            bg='white',
+            font=("Segoe UI", 18, "bold"),
+            fg=self.cor_primaria
+        )
+        title_label.pack()
+        
+        # Frame de conteúdo com padding
+        content_frame = tk.Frame(main_frame, bg='white', padx=35, pady=10)
+        content_frame.pack(fill=tk.BOTH, expand=True)
+        
         # Categoria
-        tk.Label(main_frame, text="Categoria:", bg='white', font=("Segoe UI", 12)).grid(row=0, column=0, sticky=tk.W, pady=(0, 8))
+        tk.Label(content_frame, text="Categoria:", bg='white', font=("Segoe UI", 13, "bold"), 
+                fg="#475569").grid(row=0, column=0, sticky=tk.W, pady=(0, 6))
         categoria_var = tk.StringVar()
-        categoria_combo = ttk.Combobox(main_frame, textvariable=categoria_var, width=30, font=("Segoe UI", 12),
-                                      values=["Roteador", "Switch", "Access Point", "Servidor", "Gateway", "Outro"])
-        categoria_combo.grid(row=0, column=1, sticky=tk.EW, pady=(0, 8))
+        categorias = ["OLT", "MIKROTIK", "ENERGIA", "CONCENTRADOR", "RADIO", "BORDA", "SERVIDOR"]
+        categoria_combo = ttk.Combobox(
+            content_frame, 
+            textvariable=categoria_var, 
+            width=32, 
+            font=("Segoe UI", 13),
+            values=categorias,
+            state='readonly'
+        )
+        categoria_combo.grid(row=0, column=1, sticky=tk.EW, pady=(0, 18), padx=(15, 0))
         categoria_combo.current(0)
         
         # Nome
-        tk.Label(main_frame, text="Nome:", bg='white', font=("Segoe UI", 12)).grid(row=1, column=0, sticky=tk.W, pady=(0, 8))
+        tk.Label(content_frame, text="Nome:", bg='white', font=("Segoe UI", 13, "bold"), 
+                fg="#475569").grid(row=1, column=0, sticky=tk.W, pady=(0, 6))
         nome_var = tk.StringVar()
-        nome_entry = tk.Entry(main_frame, textvariable=nome_var, width=32, font=("Segoe UI", 12))
-        nome_entry.grid(row=1, column=1, sticky=tk.EW, pady=(0, 8))
+        nome_entry = tk.Entry(
+            content_frame, 
+            textvariable=nome_var, 
+            width=35, 
+            font=("Segoe UI", 13),
+            relief='solid',
+            bd=1,
+            highlightthickness=1,
+            highlightbackground="#e2e8f0",
+            highlightcolor="#2563eb",
+            bg="#ffffff",
+            fg="#1e293b",
+            insertbackground="#1e293b"
+        )
+        nome_entry.grid(row=1, column=1, sticky=tk.EW, pady=(0, 18), padx=(15, 0))
         
         # IP
-        tk.Label(main_frame, text="IP:", bg='white', font=("Segoe UI", 12)).grid(row=2, column=0, sticky=tk.W, pady=(0, 8))
+        tk.Label(content_frame, text="IP:", bg='white', font=("Segoe UI", 13, "bold"), 
+                fg="#475569").grid(row=2, column=0, sticky=tk.W, pady=(0, 6))
         ip_var = tk.StringVar()
-        ip_entry = tk.Entry(main_frame, textvariable=ip_var, width=32, font=("Segoe UI", 12))
-        ip_entry.grid(row=2, column=1, sticky=tk.EW, pady=(0, 20))
+        ip_entry = tk.Entry(
+            content_frame, 
+            textvariable=ip_var, 
+            width=35, 
+            font=("Segoe UI", 13),
+            relief='solid',
+            bd=1,
+            highlightthickness=1,
+            highlightbackground="#e2e8f0",
+            highlightcolor="#2563eb",
+            bg="#ffffff",
+            fg="#1e293b",
+            insertbackground="#1e293b"
+        )
+        ip_entry.grid(row=2, column=1, sticky=tk.EW, pady=(0, 25), padx=(15, 0))
         
-        main_frame.grid_columnconfigure(1, weight=1)
+        content_frame.grid_columnconfigure(1, weight=1)
         
         def salvar():
             categoria = categoria_var.get().strip()
@@ -1766,18 +1914,45 @@ class AppDesktop:
             self.salvar_configuracao(mostrar_mensagem=False)
             dialog.destroy()
         
-        # Botões
+        # Botões estilizados
         btn_frame = tk.Frame(main_frame, bg='white')
-        btn_frame.grid(row=3, column=0, columnspan=2, sticky=tk.EW)
+        btn_frame.pack(fill=tk.X, pady=(0, 25), padx=35)
         
-        btn_cancelar = tk.Button(btn_frame, text="Cancelar", command=dialog.destroy,
-                                font=("Segoe UI", 12), padx=20, pady=8)
-        btn_cancelar.pack(side=tk.LEFT, padx=(0, 10))
+        btn_cancelar = tk.Button(
+            btn_frame, 
+            text="Cancelar", 
+            command=dialog.destroy,
+            font=("Segoe UI", 13),
+            padx=25,
+            pady=10,
+            bg="#f1f5f9",
+            fg="#475569",
+            relief=tk.FLAT,
+            bd=0,
+            cursor="hand2",
+            activebackground="#e2e8f0",
+            activeforeground="#1e293b",
+            highlightthickness=0
+        )
         
-        btn_ok = tk.Button(btn_frame, text="Adicionar", command=salvar,
-                          font=("Segoe UI", 12), padx=20, pady=8,
-                          bg=self.cor_primaria, fg='white', relief=tk.FLAT)
-        btn_ok.pack(side=tk.LEFT)
+        btn_ok = tk.Button(
+            btn_frame, 
+            text="Adicionar", 
+            command=salvar,
+            font=("Segoe UI", 13, "bold"),
+            padx=30,
+            pady=10,
+            bg=self.cor_primaria,
+            fg='white',
+            relief=tk.FLAT,
+            bd=0,
+            cursor="hand2",
+            activebackground=self.cor_primaria_hover,
+            activeforeground="white",
+            highlightthickness=0
+        )
+        btn_ok.pack(side=tk.RIGHT, padx=(15, 0))
+        btn_cancelar.pack(side=tk.RIGHT)
     
     def mostrar_menu_contexto_monitoramento(self, event):
         """Mostra menu de contexto ao clicar com botão direito"""
@@ -1994,6 +2169,386 @@ class AppDesktop:
         )
         subtitle.pack()
     
+    def criar_tela_configuracoes(self, parent):
+        """Cria a tela de Configurações"""
+        content_frame = tk.Frame(parent, bg=self.cor_fundo)
+        content_frame.pack(fill=tk.BOTH, expand=True, padx=self.padding_externo, pady=self.padding_externo)
+        
+        # Título
+        title = tk.Label(
+            content_frame,
+            text="⚙️ Configurações",
+            font=("Segoe UI", 27, "bold"),
+            fg=self.cor_primaria,
+            bg=self.cor_fundo
+        )
+        title.pack(pady=(20, 40))
+        
+        # Frame para informações da versão
+        info_frame = tk.LabelFrame(
+            content_frame,
+            text="Informações do Sistema",
+            font=("Segoe UI", 14, "bold"),
+            bg="white",
+            fg=self.cor_primaria,
+            padx=self.padding_interno,
+            pady=self.padding_interno,
+            relief=tk.FLAT,
+            borderwidth=1
+        )
+        info_frame.pack(fill=tk.X, pady=(0, 30))
+        
+        # Versão atual
+        versao_label = tk.Label(
+            info_frame,
+            text=f"Versão Atual: {self.versao_atual}",
+            font=("Segoe UI", 13),
+            bg="white",
+            fg="#475569"
+        )
+        versao_label.pack(anchor=tk.W, pady=5)
+        
+        # Frame para atualizações
+        update_frame = tk.LabelFrame(
+            content_frame,
+            text="Atualizações",
+            font=("Segoe UI", 14, "bold"),
+            bg="white",
+            fg=self.cor_primaria,
+            padx=self.padding_interno,
+            pady=self.padding_interno,
+            relief=tk.FLAT,
+            borderwidth=1
+        )
+        update_frame.pack(fill=tk.X, pady=(0, 30))
+        
+        # Status da atualização com loading
+        status_container = tk.Frame(update_frame, bg="white")
+        status_container.pack(anchor=tk.W, pady=(0, 15), fill=tk.X)
+        
+        self.status_atualizacao_label = tk.Label(
+            status_container,
+            text="Status: Não verificado",
+            font=("Segoe UI", 12),
+            bg="white",
+            fg="#64748b"
+        )
+        self.status_atualizacao_label.pack(side=tk.LEFT)
+        
+        # Label para loading (escondido inicialmente)
+        self.loading_label = tk.Label(
+            status_container,
+            text="⏳",
+            font=("Segoe UI", 14),
+            bg="white",
+            fg="#f59e0b"
+        )
+        self.loading_label.pack_forget()  # Esconder inicialmente
+        
+        # Frame para botões com espaçamento
+        botoes_frame = tk.Frame(update_frame, bg="white")
+        botoes_frame.pack(fill=tk.X, pady=(5, 0))
+        
+        # Botão Verificar Atualizações (estilo moderno e sutil)
+        btn_verificar = self.criar_botao_moderno(
+            botoes_frame,
+            "Verificar Atualizações",
+            self.verificar_atualizacoes,
+            cor_bg="#f1f5f9",
+            cor_fg="#475569",
+            cor_hover_bg="#e2e8f0",
+            cor_hover_fg="#1e293b",
+            icon="🔍"
+        )
+        btn_verificar.pack(side=tk.LEFT, padx=(0, 12))
+        
+        # Botão Atualizar (estilo moderno e sutil)
+        self.btn_atualizar = self.criar_botao_moderno(
+            botoes_frame,
+            "Atualizar Agora",
+            self.baixar_atualizacao,
+            cor_bg="#dbeafe",
+            cor_fg="#1e40af",
+            cor_hover_bg="#bfdbfe",
+            cor_hover_fg="#1e3a8a",
+            icon="⬇️"
+        )
+        self.btn_atualizar.pack(side=tk.LEFT)
+        self.btn_atualizar.config(state=tk.DISABLED)  # Desabilitado até verificar
+    
+    def verificar_atualizacoes(self):
+        """Verifica se há atualizações disponíveis na Cloudflare"""
+        if self.verificando_atualizacao:
+            messagebox.showinfo("Aviso", "Verificação de atualização já em andamento...")
+            return
+        
+        self.verificando_atualizacao = True
+        self.root.config(cursor="watch")
+        self.status_atualizacao_label.config(text="Status: Verificando atualizações...", fg="#f59e0b")
+        self.btn_atualizar.config(state=tk.DISABLED)
+        
+        # Mostrar loading
+        self.loading_label.pack(side=tk.LEFT, padx=(10, 0))
+        self._animar_loading()
+        
+        def verificar_thread():
+            try:
+                # Tentar encontrar a versão mais recente
+                # Como não temos API para listar, vamos tentar versões comuns
+                versao_disponivel = None
+                versao_atual_num = self._parse_versao(self.versao_atual)
+                major, minor, patch = versao_atual_num
+                
+                # Lista de versões para testar (patch, minor, major)
+                versoes_para_testar = []
+                
+                # Testar patches (1.0.1, 1.0.2, ... até 1.0.10)
+                for p in range(patch + 1, patch + 11):
+                    versoes_para_testar.append((major, minor, p))
+                
+                # Testar minor (1.1.0, 1.2.0, ... até 1.10.0)
+                for m in range(minor + 1, minor + 11):
+                    versoes_para_testar.append((major, m, 0))
+                
+                # Testar major (2.0.0, 3.0.0, ... até 10.0.0)
+                for ma in range(major + 1, major + 10):
+                    versoes_para_testar.append((ma, 0, 0))
+                
+                # Testar cada versão
+                for versao_teste in versoes_para_testar:
+                    versao_str = f"{versao_teste[0]}.{versao_teste[1]}.{versao_teste[2]}"
+                    url_teste = f"{self.cloudflare_base_url}/reachcli_v{versao_str}.zip"
+                    
+                    try:
+                        response = requests.head(url_teste, timeout=5, allow_redirects=True)
+                        if response.status_code == 200:
+                            versao_disponivel = versao_str
+                            print(f"Versão encontrada: {versao_str}")
+                            break
+                    except Exception as e:
+                        print(f"Erro ao verificar {versao_str}: {str(e)}")
+                        continue
+                
+                # Atualizar UI na thread principal
+                self.root.after(0, lambda: self._atualizar_status_verificacao(versao_disponivel))
+                
+            except Exception as e:
+                print(f"Erro ao verificar atualizações: {str(e)}")
+                self.root.after(0, lambda: self._atualizar_status_verificacao(None, str(e)))
+            finally:
+                self.verificando_atualizacao = False
+                self.root.after(0, lambda: self.root.config(cursor=""))
+                self.root.after(0, lambda: self.loading_label.pack_forget())  # Esconder loading
+        
+        threading.Thread(target=verificar_thread, daemon=True).start()
+    
+    def _animar_loading(self):
+        """Anima o indicador de loading"""
+        if self.verificando_atualizacao:
+            emojis = ["⏳", "🔄", "⏳", "🔄"]
+            current = self.loading_label.cget("text")
+            try:
+                index = emojis.index(current) if current in emojis else 0
+                next_emoji = emojis[(index + 1) % len(emojis)]
+            except:
+                next_emoji = "⏳"
+            self.loading_label.config(text=next_emoji)
+            self.root.after(500, self._animar_loading)  # Atualizar a cada 500ms
+    
+    def _atualizar_status_verificacao(self, versao_disponivel, erro=None):
+        """Atualiza o status da verificação na UI"""
+        # Esconder loading
+        self.loading_label.pack_forget()
+        
+        if erro:
+            self.status_atualizacao_label.config(
+                text=f"Status: Erro ao verificar - {erro}",
+                fg=self.cor_erro
+            )
+            messagebox.showerror("Erro", f"Erro ao verificar atualizações:\n{erro}")
+        elif versao_disponivel:
+            if self._comparar_versoes(versao_disponivel, self.versao_atual) > 0:
+                self.status_atualizacao_label.config(
+                    text=f"Status: Nova versão disponível! (v{versao_disponivel})",
+                    fg=self.cor_sucesso
+                )
+                self.btn_atualizar.config(state=tk.NORMAL)
+                self.versao_disponivel = versao_disponivel
+                messagebox.showinfo(
+                    "Atualização Disponível",
+                    f"Uma nova versão está disponível!\n\nVersão Atual: {self.versao_atual}\nNova Versão: {versao_disponivel}\n\nClique em 'Atualizar Agora' para baixar e instalar."
+                )
+            else:
+                self.status_atualizacao_label.config(
+                    text=f"Status: Você está usando a versão mais recente (v{self.versao_atual})",
+                    fg=self.cor_sucesso
+                )
+                self.btn_atualizar.config(state=tk.DISABLED)
+                messagebox.showinfo("Atualização", "Você está usando a versão mais recente!")
+        else:
+            self.status_atualizacao_label.config(
+                text="Status: Nenhuma atualização encontrada",
+                fg="#64748b"
+            )
+            self.btn_atualizar.config(state=tk.DISABLED)
+    
+    def baixar_atualizacao(self):
+        """Baixa e instala a atualização"""
+        if not hasattr(self, 'versao_disponivel') or not self.versao_disponivel:
+            messagebox.showwarning("Aviso", "Nenhuma atualização disponível. Verifique atualizações primeiro.")
+            return
+        
+        resposta = messagebox.askyesno(
+            "Confirmar Atualização",
+            f"Tem certeza que deseja atualizar para a versão {self.versao_disponivel}?\n\n"
+            "O aplicativo será reiniciado após a atualização."
+        )
+        
+        if not resposta:
+            return
+        
+        self.root.config(cursor="watch")
+        self.btn_atualizar.config(state=tk.DISABLED)
+        self.status_atualizacao_label.config(text="Status: Baixando atualização...", fg="#f59e0b")
+        
+        def baixar_thread():
+            try:
+                url_zip = f"{self.cloudflare_base_url}/reachcli_v{self.versao_disponivel}.zip"
+                zip_path = f"reachcli_v{self.versao_disponivel}.zip"
+                
+                # Baixar ZIP
+                print(f"Baixando atualização de: {url_zip}")
+                response = requests.get(url_zip, timeout=30, stream=True)
+                response.raise_for_status()
+                
+                total_size = int(response.headers.get('content-length', 0))
+                downloaded = 0
+                
+                with open(zip_path, 'wb') as f:
+                    for chunk in response.iter_content(chunk_size=8192):
+                        if chunk:
+                            f.write(chunk)
+                            downloaded += len(chunk)
+                            if total_size > 0:
+                                progresso = (downloaded / total_size) * 100
+                                self.root.after(0, lambda p=progresso: self.status_atualizacao_label.config(
+                                    text=f"Status: Baixando... {p:.1f}%"
+                                ))
+                
+                # Extrair ZIP
+                self.root.after(0, lambda: self.status_atualizacao_label.config(
+                    text="Status: Extraindo arquivos...", fg="#f59e0b"
+                ))
+                
+                # Criar diretório temporário para extração
+                temp_dir = "update_temp"
+                if os.path.exists(temp_dir):
+                    shutil.rmtree(temp_dir)
+                os.makedirs(temp_dir)
+                
+                with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                    zip_ref.extractall(temp_dir)
+                
+                # Atualizar arquivos (copiar do temp_dir para o diretório atual, exceto config.json)
+                self.root.after(0, lambda: self.status_atualizacao_label.config(
+                    text="Status: Instalando atualização...", fg="#f59e0b"
+                ))
+                
+                # Lista de arquivos a ignorar durante a atualização
+                ignorar = ['config.json', '__pycache__', '.git']
+                
+                for root, dirs, files in os.walk(temp_dir):
+                    # Filtrar diretórios a ignorar
+                    dirs[:] = [d for d in dirs if d not in ignorar]
+                    
+                    for file in files:
+                        if file in ignorar:
+                            continue
+                        
+                        src_path = os.path.join(root, file)
+                        rel_path = os.path.relpath(src_path, temp_dir)
+                        dst_path = os.path.join('.', rel_path)
+                        
+                        # Criar diretório de destino se não existir
+                        os.makedirs(os.path.dirname(dst_path), exist_ok=True)
+                        
+                        # Copiar arquivo
+                        shutil.copy2(src_path, dst_path)
+                
+                # Limpar arquivos temporários
+                shutil.rmtree(temp_dir)
+                if os.path.exists(zip_path):
+                    os.remove(zip_path)
+                
+                # Atualizar versão no config.json
+                self.versao_atual = self.versao_disponivel
+                self.salvar_configuracao(mostrar_mensagem=False)
+                
+                # Sucesso
+                self.root.after(0, lambda: self._finalizar_atualizacao(True))
+                
+            except Exception as e:
+                print(f"Erro ao baixar/instalar atualização: {str(e)}")
+                self.root.after(0, lambda: self._finalizar_atualizacao(False, str(e)))
+            finally:
+                self.root.after(0, lambda: self.root.config(cursor=""))
+        
+        threading.Thread(target=baixar_thread, daemon=True).start()
+    
+    def _finalizar_atualizacao(self, sucesso, erro=None):
+        """Finaliza o processo de atualização"""
+        if sucesso:
+            self.status_atualizacao_label.config(
+                text=f"Status: Atualização instalada com sucesso! (v{self.versao_disponivel})",
+                fg=self.cor_sucesso
+            )
+            messagebox.showinfo(
+                "Atualização Concluída",
+                f"Atualização para versão {self.versao_disponivel} instalada com sucesso!\n\n"
+                "O aplicativo precisa ser reiniciado para aplicar as mudanças.\n"
+                "Por favor, feche e abra o aplicativo novamente."
+            )
+            self.btn_atualizar.config(state=tk.DISABLED)
+        else:
+            self.status_atualizacao_label.config(
+                text=f"Status: Erro ao instalar atualização - {erro}",
+                fg=self.cor_erro
+            )
+            messagebox.showerror("Erro", f"Erro ao instalar atualização:\n{erro}")
+            self.btn_atualizar.config(state=tk.NORMAL)
+    
+    def _parse_versao(self, versao_str):
+        """Converte string de versão (ex: '1.0.0') para tupla (1, 0, 0)"""
+        try:
+            partes = versao_str.split('.')
+            return (int(partes[0]), int(partes[1]), int(partes[2]))
+        except:
+            return (1, 0, 0)
+    
+    def _incrementar_versao(self, versao_tupla, incremento):
+        """Incrementa a versão (major, minor, patch)"""
+        major, minor, patch = versao_tupla
+        patch += incremento
+        while patch >= 100:
+            patch -= 100
+            minor += 1
+        while minor >= 100:
+            minor -= 100
+            major += 1
+        return (major, minor, patch)
+    
+    def _comparar_versoes(self, versao1_str, versao2_str):
+        """Compara duas versões. Retorna 1 se versao1 > versao2, -1 se versao1 < versao2, 0 se iguais"""
+        v1 = self._parse_versao(versao1_str)
+        v2 = self._parse_versao(versao2_str)
+        
+        if v1 > v2:
+            return 1
+        elif v1 < v2:
+            return -1
+        else:
+            return 0
+    
     def criar_botao(self, parent, text, command, bg, bg_hover, bold=False, small=False):
         """Cria um botão estilizado com hover simples"""
         btn = tk.Button(
@@ -2023,6 +2578,102 @@ class AppDesktop:
         btn.bind("<Leave>", on_leave)
         
         return btn
+    
+    def criar_botao_moderno(self, parent, text, command, cor_bg="#f1f5f9", cor_fg="#475569", 
+                            cor_hover_bg="#e2e8f0", cor_hover_fg="#1e293b", icon=None, apenas_icone=False, tamanho_icone=14):
+        """Cria um botão moderno e sutil com estilo flat design, borda bonita e hover melhorado"""
+        # Cor da borda baseada na cor de fundo (mais escura)
+        if cor_bg == "#d1fae5":  # Verde claro
+            cor_borda_base = "#86efac"
+            cor_borda_hover_base = "#4ade80"
+        elif cor_bg == "#dbeafe":  # Azul claro
+            cor_borda_base = "#93c5fd"
+            cor_borda_hover_base = "#60a5fa"
+        elif cor_bg == "#fee2e2":  # Vermelho claro
+            cor_borda_base = "#fca5a5"
+            cor_borda_hover_base = "#f87171"
+        else:  # Cinza claro (padrão)
+            cor_borda_base = "#cbd5e1"
+            cor_borda_hover_base = "#94a3b8"
+        
+        # Frame interno para padding e borda bonita
+        btn_frame = tk.Frame(parent, bg=cor_bg, relief=tk.FLAT, bd=0, highlightbackground=cor_borda_base, highlightthickness=1)
+        
+        # Texto do botão - apenas ícone se apenas_icone=True
+        if apenas_icone and icon:
+            texto_completo = icon
+            padx_val = 10
+            pady_val = 8
+            font_size = tamanho_icone
+        else:
+            texto_completo = f"{icon} {text}" if icon else text
+            padx_val = 20
+            pady_val = 10
+            font_size = 12
+        
+        btn = tk.Button(
+            btn_frame,
+            text=texto_completo,
+            command=command,
+            bg=cor_bg,
+            fg=cor_fg,
+            font=("Segoe UI", font_size, "normal"),
+            padx=padx_val,
+            pady=pady_val,
+            cursor="hand2",
+            relief=tk.FLAT,
+            bd=0,
+            activebackground=cor_hover_bg,
+            activeforeground=cor_hover_fg,
+            highlightthickness=0,
+            borderwidth=0
+        )
+        btn.pack(fill=tk.BOTH, expand=True)
+        
+        # Armazenar cores originais
+        btn_frame._cor_bg = cor_bg
+        btn_frame._cor_fg = cor_fg
+        btn_frame._cor_hover_bg = cor_hover_bg
+        btn_frame._cor_hover_fg = cor_hover_fg
+        btn_frame._cor_borda = cor_borda_base
+        btn_frame._cor_borda_hover = cor_borda_hover_base
+        btn_frame._btn_interno = btn
+        
+        # Hover melhorado com borda
+        def on_enter(e):
+            if btn['state'] != tk.DISABLED:
+                btn.config(bg=cor_hover_bg, fg=cor_hover_fg)
+                btn_frame.config(bg=cor_hover_bg, highlightbackground=btn_frame._cor_borda_hover, highlightthickness=1)
+        
+        def on_leave(e):
+            if btn['state'] != tk.DISABLED:
+                btn.config(bg=cor_bg, fg=cor_fg)
+                btn_frame.config(bg=cor_bg, highlightbackground=btn_frame._cor_borda, highlightthickness=1)
+        
+        btn.bind("<Enter>", on_enter)
+        btn.bind("<Leave>", on_leave)
+        btn_frame.bind("<Enter>", on_enter)
+        btn_frame.bind("<Leave>", on_leave)
+        
+        # Método config customizado para o frame
+        def config_btn_frame(**kwargs):
+            if 'state' in kwargs:
+                state = kwargs['state']
+                if state == tk.DISABLED:
+                    btn.config(bg="#f8fafc", fg="#cbd5e1", cursor="arrow", state=tk.DISABLED)
+                    btn_frame.config(bg="#f8fafc", highlightbackground="#e2e8f0", highlightthickness=1)
+                else:
+                    btn.config(bg=cor_bg, fg=cor_fg, cursor="hand2", state=tk.NORMAL)
+                    btn_frame.config(bg=cor_bg, highlightbackground=btn_frame._cor_borda, highlightthickness=1)
+            # Repassar outros configs para o botão interno
+            outros_kwargs = {k: v for k, v in kwargs.items() if k != 'state'}
+            if outros_kwargs:
+                btn.config(**outros_kwargs)
+            return {}
+        
+        btn_frame.config = config_btn_frame
+        
+        return btn_frame
     
     def criar_botao_pequeno(self, parent, text, command):
         """Cria um botão pequeno para ordenação com hover simples"""
