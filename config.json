@@ -8,9 +8,9 @@
       "ip": "8.8.8.8"
     },
     {
-      "categoria": "Gateway",
-      "nome": "Gateway Principal",
-      "ip": "192.168.1.254"
+      "categoria": "OTL",
+      "nome": "TTT01",
+      "ip": "192.168.1.6"
     },
     {
       "categoria": "Servidor",
