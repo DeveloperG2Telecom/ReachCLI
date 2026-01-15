@@ -23,9 +23,9 @@
       "ip": "45.235.89.99"
     },
     {
-      "categoria": "Roteador",
-      "nome": "Error",
-      "ip": "10.10.55.50"
+      "categoria": "Tumin",
+      "nome": "Host",
+      "ip": "255.255.255.0"
     }
   ]
 }
